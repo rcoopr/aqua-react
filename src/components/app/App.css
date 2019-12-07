@@ -1,3 +1,10 @@
 .app {
   font-size: 1.1em;
 }
+
+.board {
+  width: 50vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+}
