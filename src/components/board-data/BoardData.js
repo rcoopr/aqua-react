@@ -120,6 +120,12 @@ const BoardData = {
         ]
       ]
       // TODO: BoardData should contain the completed board state for validation/completion checks
+    },
+    {
+      id: 2,
+      difficulty: "easy",
+      size: "8x8",
+      labels: {}
     }
   ],
   meta: ""
