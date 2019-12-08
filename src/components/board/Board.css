@@ -1,0 +1,28 @@
+td {
+  border: 1px solid #baabab44;
+}
+
+/* Target Labels (Clues) */
+th:not(:nth-of-type(1)),
+td:first-child {
+  background: #333;
+  color: #baabab;
+  border: 1px dashed #baababaa;
+  font-weight: normal;
+  font-size: 1.5em;
+}
+
+table {
+  width: 60vmin;
+  height: 60vmin;
+
+  /* Gap between cells removed */
+  border-collapse: collapse;
+
+  table-layout: fixed;
+  text-align: center;
+}
+
+/* td + td::before {
+  border-left: none;
+} */

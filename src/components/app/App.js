@@ -8,29 +8,20 @@ import { ReactComponent as TrashIcon } from "../../assets/trash.svg";
 import BoardData from "../board-data/BoardData";
 
 const totallyRandomBoard = BoardData.content[0];
-const TOOLS = ["air", "water", "trash"];
 
-const BoardControls = ({ tools }) => {
-  let collection = [];
-  tools.forEach(tool => {
-    collection.push(<Picker name={tool} key={tool} size="32" />);
-  });
-
-  return collection;
-};
-
-// TODO: unnecessary enum, possibly useful when defining event handlers?
-const Picker = ({ name, size }) => {
+const BoardControls = () => {
   return (
-    <li className={name}>
-      {
-        {
-          air: <AirIcon width={size} height={size} />,
-          water: <WaterIcon width={size} height={size} />,
-          trash: <TrashIcon width={size} height={size} />
-        }[name]
-      }
-    </li>
+    <ul className="controls">
+      <li>
+        <AirIcon />
+      </li>
+      <li>
+        <WaterIcon />
+      </li>
+      <li>
+        <TrashIcon />
+      </li>
+    </ul>
   );
 };
 
@@ -40,7 +31,7 @@ const App = () => {
       <Header />
       <section className="board">
         <Board boardData={totallyRandomBoard} />
-        <BoardControls tools={TOOLS} />
+        <BoardControls size="32" />
       </section>
     </div>
   );
