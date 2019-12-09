@@ -1,5 +1,4 @@
 import React from "react";
-import "./BoardControls.css";
 
 import {
   ToolTray,
@@ -14,18 +13,21 @@ const BoardControls = ({ currentTool, setCurrentTool }) => {
     <ToolTray>
       <Tool
         active={currentTool === "air"}
+        color="#D8F6EF"
         onClick={() => setCurrentTool("air")}
       >
         <AirIcon />
       </Tool>
       <Tool
         active={currentTool === "water"}
+        color="#5CCFE6"
         onClick={() => setCurrentTool("water")}
       >
         <WaterIcon />
       </Tool>
       <Tool
         active={currentTool === "trash"}
+        color="#FF7C5C"
         onClick={() => setCurrentTool("trash")}
       >
         <TrashIcon />

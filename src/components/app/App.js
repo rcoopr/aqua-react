@@ -1,29 +1,28 @@
 import React, { useState } from "react";
-
-import "./App.css";
 import Header from "../header/Header";
 import Board from "../board/Board";
 import BoardControls from "../board-controls/BoardControls";
-import BoardData from "../board-data/BoardData";
-
-const totallyRandomBoard = BoardData.content[0];
+import { Container, GameArea } from "./AppStyle";
 
 const App = () => {
-  // 0: air, 1: water, 2: trash
   const [currentlySelectedTool, setCurrentlySelectedTool] = useState("air");
+  const [dragging, setDragging] = useState(false);
 
   return (
-    <div className="app">
+    <Container onMouseUp={() => setDragging(false)}>
       <Header />
-      <section className="board">
-        <Board boardData={totallyRandomBoard} />
+      <GameArea>
+        <Board
+          draggingType={dragging}
+          setDraggingType={setDragging}
+          onMouseDown={() => setDragging(true)}
+        />
         <BoardControls
-          size="32"
           currentTool={currentlySelectedTool}
           setCurrentTool={setCurrentlySelectedTool}
         />
-      </section>
-    </div>
+      </GameArea>
+    </Container>
   );
 };
 

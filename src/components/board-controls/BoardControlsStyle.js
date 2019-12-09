@@ -7,6 +7,9 @@ export const ToolTray = styled.ul`
   display: flex;
   flex-direction: row;
   margin: 2em;
+  @media screen and (min-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 export const Tool = styled.li`
@@ -15,10 +18,13 @@ export const Tool = styled.li`
   border-radius: 0.5em;
   border-top: 2px solid #00000044;
   border-bottom: 2px solid #ffffff22;
+  &:active {
+    background: ${props => props.color || "#5ccfe6"};
+  }
   ${props =>
     props.active &&
     css`
-      background: ${props.color || "coral"};
+      background: ${props.color || "#5CCFE6"};
     `}
 `;
 
