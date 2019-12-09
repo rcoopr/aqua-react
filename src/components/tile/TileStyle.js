@@ -3,10 +3,6 @@ import styled from "styled-components";
 export const Container = styled.li`
   width: 5vw;
   height: 5vw;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
