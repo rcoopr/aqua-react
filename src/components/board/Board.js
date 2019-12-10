@@ -1,21 +1,18 @@
 import React, { useState } from "react";
+import { GridArea, LabelRow, LabelColumn } from "./BoardStyle";
 import boards from "../board-data/BoardData";
 import Tile from "../tile/Tile";
-import { GridArea, Grid, LabelRow, LabelColumn } from "./BoardStyle";
+import Grid from "../grid/Grid";
 
 const board = boards.content[0];
-const initialState = Array(board.board.length ** 2).fill(0);
-const updateState = (state, tile, value) => {
-  let newState = [...state];
-  newState[tile] = value;
+// const labels = [...boards.content[0].labels.column, ...boards.content[0].labels.row];
 
-  return newState;
-};
-
-const Board = ({ draggingType }) => {
+const Board = ({ currentTool, dragging }) => {
   // TODO: add board logic including selecting a board
 
-  const [boardState, setBoardState] = useState(initialState);
+  const [boardState, setBoardState] = useState(
+    Array(board.board.length ** 2).fill(0)
+  );
 
   return (
     <GridArea>
@@ -33,8 +30,8 @@ const Board = ({ draggingType }) => {
         length={board.board.length}
         boardState={boardState}
         setBoardState={setBoardState}
-        updateState={updateState}
-        draggingType={draggingType}
+        dragging={dragging}
+        currentTool={currentTool}
       />
     </GridArea>
   );

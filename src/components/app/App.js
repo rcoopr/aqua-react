@@ -12,7 +12,11 @@ const App = () => {
     <Container onMouseUp={() => setDragging(false)}>
       <Header />
       <GameArea>
-        <Board draggingType={dragging} onMouseDown={() => setDragging(true)} />
+        <Board
+          currentTool={currentlySelectedTool}
+          dragging={dragging}
+          onMouseDown={() => setDragging(true)}
+        />
         <BoardControls
           currentTool={currentlySelectedTool}
           setCurrentTool={setCurrentlySelectedTool}
