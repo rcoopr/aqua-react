@@ -30,6 +30,7 @@ const Board = ({ draggingType }) => {
         ))}
       </LabelColumn>
       <Grid
+        length={board.board.length}
         boardState={boardState}
         setBoardState={setBoardState}
         updateState={updateState}
