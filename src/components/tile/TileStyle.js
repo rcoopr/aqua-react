@@ -12,7 +12,7 @@ export const Container = styled.li`
     props.value >= 0 && props.type === "label" ? "#baababaa" : "#baabab22"};
   /* background: ${props =>
     props.type === "cell"
-      ? props.value >= 0
+      ? props.value >= 1
         ? "#5CCFE6aa"
         : "#D8F6EFaa"
       : ""}; */

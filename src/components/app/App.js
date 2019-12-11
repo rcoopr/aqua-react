@@ -15,7 +15,7 @@ const App = () => {
         <Board
           currentTool={currentlySelectedTool}
           dragging={dragging}
-          onMouseDown={() => setDragging(true)}
+          setDragging={setDragging}
         />
         <BoardControls
           currentTool={currentlySelectedTool}

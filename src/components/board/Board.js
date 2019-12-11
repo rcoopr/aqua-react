@@ -7,7 +7,7 @@ import Grid from "../grid/Grid";
 const board = boards.content[0];
 // const labels = [...boards.content[0].labels.column, ...boards.content[0].labels.row];
 
-const Board = ({ currentTool, dragging }) => {
+const Board = ({ currentTool, dragging, setDragging }) => {
   // TODO: add board logic including selecting a board
 
   const [boardState, setBoardState] = useState(
@@ -15,7 +15,11 @@ const Board = ({ currentTool, dragging }) => {
   );
 
   return (
-    <GridArea>
+    <GridArea
+      onMouseDown={() => {
+        setDragging(true);
+      }}
+    >
       <LabelRow>
         {board.labels.column.map((value, index) => (
           <Tile key={`top-${value}-${index}`} value={value} type="label" />

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Value } from "./TileStyle";
 
-const Tile = ({ value, type }) => {
+const Tile = ({ value, type, id }) => {
   const [faded, setFaded] = useState(false);
 
   return (
@@ -9,6 +9,7 @@ const Tile = ({ value, type }) => {
       value={value}
       type={type}
       faded={faded}
+      id={id}
       onClick={() => {
         if (value !== -1) setFaded(!faded);
       }}
