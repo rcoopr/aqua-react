@@ -1,27 +1,26 @@
-import React from "react";
-import Tile from "../tile/Tile";
-import { StyledGrid } from "./GridStyle";
-
-const updateState = (oldState, index, tool) => {
-  let newState = [...oldState];
-  debugger;
-  newState[parseInt(index)] = tool === "air" ? 1 : tool === "water" ? 2 : 0;
-  console.log(newState);
-};
+import React from 'react';
+import Tile from '../tile/Tile';
+import { StyledGrid } from './GridStyle';
 
 const Grid = ({ length, boardState, setBoardState, dragging, currentTool }) => {
+  const handleMouseOver = tileId => {
+    if (!dragging) return;
+
+    const newBoardState = [...boardState];
+    newBoardState[tileId] = currentTool;
+    setBoardState(newBoardState);
+  };
+
   return (
-    <StyledGrid
-      length={length}
-      onMouseOver={e => {
-        let hoveredTile = e.target.closest("li");
-        if (dragging) {
-          setBoardState(updateState(boardState, hoveredTile.id, currentTool));
-        }
-      }}
-    >
+    <StyledGrid length={length}>
       {boardState.map((value, index) => (
-        <Tile key={index} value={value} id={index} type="cell" />
+        <Tile
+          key={index}
+          value={value}
+          id={index}
+          type="cell"
+          onMouseOver={handleMouseOver}
+        />
       ))}
     </StyledGrid>
   );

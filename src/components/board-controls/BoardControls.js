@@ -1,34 +1,34 @@
-import React from "react";
+import React from 'react';
 
 import {
   ToolTray,
   Tool,
   AirIcon,
   WaterIcon,
-  TrashIcon
-} from "./BoardControlsStyle";
+  TrashIcon,
+} from './BoardControlsStyle';
 
 const BoardControls = ({ currentTool, setCurrentTool }) => {
   return (
     <ToolTray>
       <Tool
-        active={currentTool === "air"}
+        active={currentTool === 'air'}
         color="#D8F6EF"
-        onClick={() => setCurrentTool("air")}
+        onClick={() => setCurrentTool('air')}
       >
         <AirIcon />
       </Tool>
       <Tool
-        active={currentTool === "water"}
+        active={currentTool === 'water'}
         color="#5CCFE6"
-        onClick={() => setCurrentTool("water")}
+        onClick={() => setCurrentTool('water')}
       >
         <WaterIcon />
       </Tool>
       <Tool
-        active={currentTool === "trash"}
+        active={currentTool === 'empty'}
         color="#FF7C5C"
-        onClick={() => setCurrentTool("trash")}
+        onClick={() => setCurrentTool('empty')}
       >
         <TrashIcon />
       </Tool>
