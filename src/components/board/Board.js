@@ -11,15 +11,11 @@ const Board = ({ currentTool, dragging, setDragging }) => {
   // TODO: add board logic including selecting a board
 
   const [boardState, setBoardState] = useState(
-    Array(board.board.length ** 2).fill(0)
+    Array(board.board.length ** 2).fill("empty")
   );
 
   return (
-    <GridArea
-      onMouseDown={() => {
-        setDragging(true);
-      }}
-    >
+    <GridArea>
       <LabelRow>
         {board.labels.column.map((value, index) => (
           <Tile key={`top-${value}-${index}`} value={value} type="label" />
@@ -35,6 +31,7 @@ const Board = ({ currentTool, dragging, setDragging }) => {
         boardState={boardState}
         setBoardState={setBoardState}
         dragging={dragging}
+        setDragging={setDragging}
         currentTool={currentTool}
       />
     </GridArea>
