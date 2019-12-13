@@ -38,5 +38,5 @@ export const NumberTileContainer = styled(Container)`
 
 export const Content = styled.span`
   color: #baabab;
-  font-size: calc(2vw + 10px);
+  font-size: calc(3vmin + 10px);
 `;

@@ -13,5 +13,5 @@ export const StyledGrid = styled.ul`
   padding: 0;
   border-top: 2px solid white;
   border-left: 2px solid white;
-  font-size: calc(2vw + 10px);
+  font-size: calc(3vmin + 10px);
 `;
