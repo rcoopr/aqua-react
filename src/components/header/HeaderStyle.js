@@ -25,9 +25,13 @@ export const Nav = styled.nav`
 
 export const Timer = styled(StyledLi)``;
 
-export const ControlsPrompt = styled(StyledLi)``;
+// export const ControlsPrompt = styled(StyledLi)``;
 
-export const GithubLink = styled(StyledLi)``;
+export const GithubLink = styled(StyledLi)`
+  a {
+    color: inherit;
+  }
+`;
 
 export const ThemeSwitch = styled(StyledLi)``;
 

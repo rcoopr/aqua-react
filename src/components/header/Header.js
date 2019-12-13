@@ -1,8 +1,9 @@
 import React from "react";
+import Ocitcon, { MarkGithub } from "@primer/octicons-react";
 import {
   Nav,
   Timer,
-  ControlsPrompt,
+  // ControlsPrompt,
   GithubLink,
   ThemeSwitch,
   AppInfo,
@@ -15,8 +16,12 @@ const Header = ({ title }) => {
       <AppTitle>Aquarium</AppTitle>
       <AppInfo>
         <Timer>00:00</Timer>
-        <ControlsPrompt>Controls</ControlsPrompt>
-        <GithubLink href="https://github.com/Froskk">Github</GithubLink>
+        {/* <ControlsPrompt>Controls</ControlsPrompt> */}
+        <GithubLink>
+          <a href="https://github.com/Froskk">
+            <Ocitcon icon={MarkGithub} verticalAlign="middle" size="medium" />
+          </a>
+        </GithubLink>
         <ThemeSwitch>Switch</ThemeSwitch>
       </AppInfo>
     </Nav>

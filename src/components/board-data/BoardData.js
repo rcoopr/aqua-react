@@ -4,7 +4,7 @@ const boards = {
       id: 1,
       difficulty: "hard",
       labels: {
-        row: [4, 4, -1, 5, -1, 4, -1, -1],
+        row: [-1, 4, 4, -1, 5, -1, 4, -1],
         column: [6, 3, -1, 4, 3, 4, 3, 4]
       },
       board: [
