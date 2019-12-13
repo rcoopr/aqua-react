@@ -11,13 +11,23 @@ export const BoardTileContainer = styled(Container)`
   ${props =>
     props.value === "water" &&
     css`
-      background: #5ccfe6;
+      background: #5ccfe6aa;
     `};
   ${props =>
     props.value === "air" &&
     css`
-      background: #d8f6ef;
+      background: #d8f6efaa;
     `};
+  ${props =>
+    props.borderRight &&
+    css`
+      border-right: 2px solid white;
+    `}
+  ${props =>
+    props.borderBottom &&
+    css`
+      border-bottom: 2px solid white;
+    `}
 `;
 
 export const NumberTileContainer = styled(Container)`

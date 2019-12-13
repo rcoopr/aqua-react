@@ -8,7 +8,8 @@ const Grid = ({
   setBoardState,
   dragging,
   setDragging,
-  currentTool
+  currentTool,
+  boardLayout
 }) => {
   const updateBoardState = tileID => {
     const newBoardState = [...boardState];
@@ -27,15 +28,26 @@ const Grid = ({
 
   return (
     <StyledGrid length={length}>
-      {boardState.map((value, index) => (
-        <BoardTile
-          key={index}
-          value={value}
-          id={index}
-          onMouseDown={handleMouseDown}
-          onMouseOver={handleMouseOver}
-        />
-      ))}
+      {boardState.map((value, index) => {
+        // Current issues: it checks value out of bounds or on next row.
+        // Also may double-count some boundaries.
+        const valueToRight = boardLayout[index + 1];
+        const valueBelow = boardLayout[index + length] || "";
+        const borderRight = valueToRight !== boardLayout[index];
+        const borderBottom = valueBelow !== boardLayout[index];
+
+        return (
+          <BoardTile
+            key={index}
+            value={value}
+            id={index}
+            borderRight={borderRight}
+            borderBottom={borderBottom}
+            onMouseDown={handleMouseDown}
+            onMouseOver={handleMouseOver}
+          />
+        );
+      })}
     </StyledGrid>
   );
 };

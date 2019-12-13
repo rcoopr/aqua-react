@@ -30,6 +30,7 @@ const Board = ({ currentTool, dragging, setDragging }) => {
         length={board.board.length}
         boardState={boardState}
         setBoardState={setBoardState}
+        boardLayout={board.board.flat(1)}
         dragging={dragging}
         setDragging={setDragging}
         currentTool={currentTool}

@@ -11,5 +11,7 @@ export const StyledGrid = styled.ul`
   grid-gap: 0px;
   list-style: none;
   padding: 0;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
   font-size: calc(2vw + 10px);
 `;

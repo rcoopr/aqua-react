@@ -4,6 +4,8 @@ import { BoardTileContainer } from "./TileStyle";
 const BoardTile = ({
   value,
   id,
+  borderBottom,
+  borderRight,
   onMouseDown = () => {},
   onMouseOver = () => {}
 }) => {
@@ -11,6 +13,8 @@ const BoardTile = ({
     <BoardTileContainer
       value={value}
       id={id}
+      borderBottom={borderBottom}
+      borderRight={borderRight}
       onMouseDown={() => onMouseDown(id)}
       onMouseOver={() => onMouseOver(id)}
     />
