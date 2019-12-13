@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { GridArea, LabelRow, LabelColumn } from "./BoardStyle";
 import boards from "../board-data/BoardData";
-import Tile from "../tile/Tile";
+import NumberTile from "../tile/NumberTile";
 import Grid from "../grid/Grid";
 
 const board = boards.content[0];
@@ -18,12 +18,12 @@ const Board = ({ currentTool, dragging, setDragging }) => {
     <GridArea length={board.board.length}>
       <LabelRow length={board.board.length}>
         {board.labels.column.map((value, index) => (
-          <Tile key={`top-${value}-${index}`} value={value} type="label" />
+          <NumberTile key={`top-${value}-${index}`} value={value} id={index} />
         ))}
       </LabelRow>
       <LabelColumn length={board.board.length}>
         {board.labels.row.map((value, index) => (
-          <Tile key={`left-${value}-${index}`} value={value} type="label" />
+          <NumberTile key={`left-${value}-${index}`} value={value} id={index} />
         ))}
       </LabelColumn>
       <Grid

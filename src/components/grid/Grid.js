@@ -1,5 +1,5 @@
 import React from "react";
-import Tile from "../tile/Tile";
+import BoardTile from "../tile/BoardTile";
 import { StyledGrid } from "./GridStyle";
 
 const Grid = ({
@@ -28,11 +28,10 @@ const Grid = ({
   return (
     <StyledGrid length={length}>
       {boardState.map((value, index) => (
-        <Tile
+        <BoardTile
           key={index}
           value={value}
           id={index}
-          type="cell"
           onMouseDown={handleMouseDown}
           onMouseOver={handleMouseOver}
         />
