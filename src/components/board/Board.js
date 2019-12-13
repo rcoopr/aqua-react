@@ -15,13 +15,13 @@ const Board = ({ currentTool, dragging, setDragging }) => {
   );
 
   return (
-    <GridArea>
-      <LabelRow>
+    <GridArea length={board.board.length}>
+      <LabelRow length={board.board.length}>
         {board.labels.column.map((value, index) => (
           <Tile key={`top-${value}-${index}`} value={value} type="label" />
         ))}
       </LabelRow>
-      <LabelColumn>
+      <LabelColumn length={board.board.length}>
         {board.labels.row.map((value, index) => (
           <Tile key={`left-${value}-${index}`} value={value} type="label" />
         ))}

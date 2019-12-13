@@ -1,8 +1,6 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.li`
-  width: 5vw;
-  height: 5vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,12 +13,12 @@ export const Container = styled.li`
   ${props =>
     props.value === "water" &&
     css`
-      background: #5ccfe6aa;
+      background: #5ccfe6;
     `}
   ${props =>
     props.value === "air" &&
     css`
-      background: #d8f6efaa;
+      background: #d8f6ef;
     `}
 `;
 
