@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledGrid = styled.ul`
+const Grid = styled.ul`
   grid-template-columns: repeat(${props => props.length}, 1fr);
   grid-template-rows: repeat(${props => props.length}, 1fr);
 
@@ -15,3 +15,9 @@ export const StyledGrid = styled.ul`
   border-left: 2px solid white;
   font-size: calc(3vmin + 10px);
 `;
+
+const S = {
+  Grid
+};
+
+export default S;

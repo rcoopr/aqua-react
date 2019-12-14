@@ -1,30 +1,22 @@
 import React from "react";
 import Ocitcon, { MarkGithub } from "@primer/octicons-react";
-import {
-  Nav,
-  Timer,
-  // ControlsPrompt,
-  GithubLink,
-  ThemeSwitch,
-  AppInfo,
-  AppTitle
-} from "./HeaderStyle";
+import S from "./Header.styled";
 
 const Header = ({ title }) => {
   return (
-    <Nav>
-      <AppTitle>Aquarium</AppTitle>
-      <AppInfo>
-        <Timer>00:00</Timer>
+    <S.Nav>
+      <S.AppTitle>Aquarium</S.AppTitle>
+      <S.AppInfo>
+        <S.Timer>00:00</S.Timer>
         {/* <ControlsPrompt>Controls</ControlsPrompt> */}
-        <GithubLink>
+        <S.GithubLink>
           <a href="https://github.com/Froskk">
             <Ocitcon icon={MarkGithub} verticalAlign="middle" size="medium" />
           </a>
-        </GithubLink>
-        <ThemeSwitch>Switch</ThemeSwitch>
-      </AppInfo>
-    </Nav>
+        </S.GithubLink>
+        <S.ThemeSwitch>Switch</S.ThemeSwitch>
+      </S.AppInfo>
+    </S.Nav>
   );
 };
 

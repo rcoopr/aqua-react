@@ -16,33 +16,33 @@ const StyledLi = styled.li`
   margin: 0 0.4em;
 `;
 
-export const Nav = styled.nav`
+const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
 `;
 
-export const Timer = styled(StyledLi)``;
+const Timer = styled(StyledLi)``;
 
 // export const ControlsPrompt = styled(StyledLi)``;
 
-export const GithubLink = styled(StyledLi)`
+const GithubLink = styled(StyledLi)`
   a {
     color: inherit;
   }
 `;
 
-export const ThemeSwitch = styled(StyledLi)``;
+const ThemeSwitch = styled(StyledLi)``;
 
-export const AppInfo = styled.ul`
+const AppInfo = styled.ul`
   margin: 0.5em;
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
-export const AppTitle = styled.h1`
+const AppTitle = styled.h1`
   margin: 0.5em;
   color: #00d4ff;
   font-size: 2rem;
@@ -54,3 +54,15 @@ export const AppTitle = styled.h1`
 
   animation: ${HeaderFlow} 15s ease infinite;
 `;
+
+const S = {
+  Nav,
+  Timer,
+  // ControlsPrompt,
+  GithubLink,
+  ThemeSwitch,
+  AppInfo,
+  AppTitle
+};
+
+export default S;

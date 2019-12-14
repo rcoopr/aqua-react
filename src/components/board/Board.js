@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { GridArea, LabelRow, LabelColumn } from "./BoardStyle";
+import S from "./Board.styled";
 import boards from "../board-data/BoardData";
 import NumberTile from "../tile/NumberTile";
 import Grid from "../grid/Grid";
@@ -15,17 +15,17 @@ const Board = ({ currentTool, dragging, setDragging }) => {
   );
 
   return (
-    <GridArea length={board.board.length}>
-      <LabelRow length={board.board.length}>
+    <S.GridArea length={board.board.length}>
+      <S.LabelRow length={board.board.length}>
         {board.labels.column.map((value, index) => (
           <NumberTile key={`top-${value}-${index}`} value={value} id={index} />
         ))}
-      </LabelRow>
-      <LabelColumn length={board.board.length}>
+      </S.LabelRow>
+      <S.LabelColumn length={board.board.length}>
         {board.labels.row.map((value, index) => (
           <NumberTile key={`left-${value}-${index}`} value={value} id={index} />
         ))}
-      </LabelColumn>
+      </S.LabelColumn>
       <Grid
         length={board.board.length}
         boardState={boardState}
@@ -35,7 +35,7 @@ const Board = ({ currentTool, dragging, setDragging }) => {
         setDragging={setDragging}
         currentTool={currentTool}
       />
-    </GridArea>
+    </S.GridArea>
   );
 };
 

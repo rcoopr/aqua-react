@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { NumberTileContainer, Content } from "./TileStyle";
+import S from "./Tile.styled";
 
 const NumberTile = ({ value, id }) => {
   const [faded, setFaded] = useState(false);
 
   return (
-    <NumberTileContainer
+    <S.NumberTile
       value={value}
       faded={faded}
       id={id}
@@ -13,8 +13,8 @@ const NumberTile = ({ value, id }) => {
         if (value !== -1) setFaded(!faded);
       }}
     >
-      <Content>{value !== -1 ? value : ""}</Content>
-    </NumberTileContainer>
+      <S.Content>{value !== -1 ? value : ""}</S.Content>
+    </S.NumberTile>
   );
 };
 

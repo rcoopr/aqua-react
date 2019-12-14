@@ -1,6 +1,6 @@
 import React from "react";
 import BoardTile from "../tile/BoardTile";
-import { StyledGrid } from "./GridStyle";
+import S from "./Grid.styled";
 
 const Grid = ({
   length,
@@ -27,7 +27,7 @@ const Grid = ({
   };
 
   return (
-    <StyledGrid length={length}>
+    <S.Grid length={length}>
       {boardState.map((value, index) => {
         // Current issues: it checks value out of bounds or on next row.
         // Also may double-count some boundaries.
@@ -48,7 +48,7 @@ const Grid = ({
           />
         );
       })}
-    </StyledGrid>
+    </S.Grid>
   );
 };
 

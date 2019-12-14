@@ -1,13 +1,13 @@
 import styled, { css } from "styled-components";
 
-const Container = styled.li`
+const Tile = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid #baabab22;
 `;
 
-export const BoardTileContainer = styled(Container)`
+export const BoardTile = styled(Tile)`
   ${props =>
     props.value === "water" &&
     css`
@@ -30,7 +30,7 @@ export const BoardTileContainer = styled(Container)`
     `}
 `;
 
-export const NumberTileContainer = styled(Container)`
+export const NumberTile = styled(Tile)`
   border-style: dashed;
   border-color: ${props => (props.value === -1 ? "#baabab22" : "#baababaa")};
   opacity: ${props => (props.faded === true ? 0.2 : 1)};
@@ -40,3 +40,11 @@ export const Content = styled.span`
   color: #baabab;
   font-size: calc(3vmin + 10px);
 `;
+
+const S = {
+  BoardTile,
+  NumberTile,
+  Content
+};
+
+export default S;

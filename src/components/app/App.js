@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import Header from "../header/Header";
 import Board from "../board/Board";
 import BoardControls from "../board-controls/BoardControls";
-import { Container, GameArea } from "./AppStyle";
+import S from "./App.styled";
 
 const App = () => {
   const [currentlySelectedTool, setCurrentlySelectedTool] = useState("air");
   const [dragging, setDragging] = useState(false);
 
   return (
-    <Container onMouseUp={() => setDragging(false)}>
+    <S.Container onMouseUp={() => setDragging(false)}>
       <Header />
-      <GameArea>
+      <S.GameArea>
         <Board
           currentTool={currentlySelectedTool}
           dragging={dragging}
@@ -21,8 +21,8 @@ const App = () => {
           currentTool={currentlySelectedTool}
           setCurrentTool={setCurrentlySelectedTool}
         />
-      </GameArea>
-    </Container>
+      </S.GameArea>
+    </S.Container>
   );
 };
 

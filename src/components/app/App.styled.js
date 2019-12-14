@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const Container = styled.main`
+const Container = styled.main`
   font-size: 1.1em;
   display: flex;
   flex-direction: column;
   height: 100vh;
 `;
 
-export const GameArea = styled.section`
+const GameArea = styled.section`
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -15,3 +15,10 @@ export const GameArea = styled.section`
   align-items: center;
   justify-content: center;
 `;
+
+const S = {
+  Container,
+  GameArea
+};
+
+export default S;
