@@ -7,7 +7,7 @@ const Tile = styled.li`
   border: 1px solid #baabab22;
 `;
 
-export const BoardTile = styled(Tile)`
+const BoardTile = styled(Tile)`
   ${props =>
     props.value === "water" &&
     css`
@@ -30,13 +30,13 @@ export const BoardTile = styled(Tile)`
     `}
 `;
 
-export const NumberTile = styled(Tile)`
+const NumberTile = styled(Tile)`
   border-style: dashed;
   border-color: ${props => (props.value === -1 ? "#baabab22" : "#baababaa")};
   opacity: ${props => (props.faded === true ? 0.2 : 1)};
 `;
 
-export const Content = styled.span`
+const Content = styled.span`
   color: #baabab;
   font-size: calc(3vmin + 10px);
 `;
