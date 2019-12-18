@@ -12,7 +12,7 @@ const ThemeSwitch = ({ isDarkMode, setIsDarkMode }) => {
           localStorage.setItem("isDarkMode", !isDarkMode);
         }}
       />
-      <S.Label for="dn">
+      <S.Label htmlFor="dn">
         <S.Icon />
       </S.Label>
     </S.ThemeSwitch>
