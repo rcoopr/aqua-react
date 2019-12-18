@@ -10,8 +10,12 @@ const board = boards.content[0];
 const Board = ({ currentTool, dragging, setDragging }) => {
   // TODO: add board logic including selecting a board
 
+  const storedBoard = localStorage.getItem("boardState")
+    ? JSON.parse(localStorage.getItem("boardState"))
+    : null;
+
   const [boardState, setBoardState] = useState(
-    Array(board.board.length ** 2).fill("empty")
+    storedBoard || Array(board.board.length ** 2).fill("empty")
   );
 
   return (

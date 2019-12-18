@@ -15,6 +15,7 @@ const Grid = ({
     const newBoardState = [...boardState];
     newBoardState[tileID] = currentTool;
     setBoardState(newBoardState);
+    localStorage.setItem("boardState", JSON.stringify(newBoardState));
   };
   const handleMouseDown = tileID => {
     setDragging(true);
