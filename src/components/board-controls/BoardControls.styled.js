@@ -45,12 +45,19 @@ const TrashIcon = styled(TrashIconSVG)`
   ${svg}
 `;
 
+const Selector = styled.li`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const S = {
   ToolTray,
   Tool,
   AirIcon,
   WaterIcon,
-  TrashIcon
+  TrashIcon,
+  Selector
 };
 
 export default S;

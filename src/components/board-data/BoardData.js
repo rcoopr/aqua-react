@@ -1,4 +1,4 @@
-const boards = {
+const data = {
   content: [
     {
       id: 1,
@@ -60,4 +60,5 @@ const boards = {
   meta: ""
 };
 
-export default boards;
+export const boards = data.content;
+export const meta = data.meta;

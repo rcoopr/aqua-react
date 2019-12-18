@@ -26,6 +26,13 @@ const BoardControls = ({ currentTool, setCurrentTool }) => {
       >
         <S.TrashIcon />
       </S.Tool>
+      <S.Selector>
+        <select>
+          <option value="1">Board 1</option>
+          <option value="2">Board 2</option>
+          <option value="3">Board 3</option>
+        </select>
+      </S.Selector>
     </S.ToolTray>
   );
 };

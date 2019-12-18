@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import S from "./Board.styled";
-import boards from "../board-data/BoardData";
+import { boards } from "../board-data/BoardData";
 import NumberTile from "../tile/NumberTile";
 import Grid from "../grid/Grid";
 
-const board = boards.content[0];
+const board = boards[2];
 // const labels = [...boards.content[0].labels.column, ...boards.content[0].labels.row];
 
 const Board = ({ currentTool, dragging, setDragging }) => {
