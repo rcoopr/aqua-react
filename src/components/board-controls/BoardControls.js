@@ -7,21 +7,21 @@ const BoardControls = ({ currentTool, setCurrentTool }) => {
     <S.ToolTray>
       <S.Tool
         active={currentTool === "air"}
-        color="#D8F6EF"
+        name="air"
         onClick={() => setCurrentTool("air")}
       >
         <S.AirIcon />
       </S.Tool>
       <S.Tool
         active={currentTool === "water"}
-        color="#5CCFE6"
+        name="water"
         onClick={() => setCurrentTool("water")}
       >
         <S.WaterIcon />
       </S.Tool>
       <S.Tool
         active={currentTool === "trash"}
-        color="#FF7C5C"
+        name="trash"
         onClick={() => setCurrentTool("trash")}
       >
         <S.TrashIcon />

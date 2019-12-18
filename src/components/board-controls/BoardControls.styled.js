@@ -19,12 +19,12 @@ const Tool = styled.li`
   border-top: 2px solid #00000044;
   border-bottom: 2px solid #ffffff22;
   &:active {
-    background: ${props => props.color || "#5ccfe6"};
+    background: ${props => props.theme.colors[props.name]};
   }
   ${props =>
     props.active &&
     css`
-      background: ${props.color || "#5CCFE6"};
+      background: ${props => props.theme.colors[props.name]};
     `}
 `;
 
@@ -32,6 +32,7 @@ const svg = css`
   width: 3em;
   height: 3em;
   margin: 0.6em;
+  fill: ${props => props.theme.colors.svgFill};
 `;
 
 const AirIcon = styled(AirIconSVG)`

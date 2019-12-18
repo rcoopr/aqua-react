@@ -11,8 +11,8 @@ const Grid = styled.ul`
   grid-gap: 0px;
   list-style: none;
   padding: 0;
-  border-top: 2px solid white;
-  border-left: 2px solid white;
+  border-top: 2px solid ${props => props.theme.colors.accent};
+  border-left: 2px solid ${props => props.theme.colors.accent};
   font-size: calc(3vmin + 10px);
 `;
 

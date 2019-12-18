@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const Container = styled.main`
+  background: ${props => props.theme.colors.background};
+  color: ${props => props.theme.colors.primary};
   font-size: 1.1em;
   display: flex;
   flex-direction: column;
