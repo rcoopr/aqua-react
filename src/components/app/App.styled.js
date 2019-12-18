@@ -7,6 +7,7 @@ const Container = styled.main`
   display: flex;
   flex-direction: column;
   height: 100vh;
+  transition: all 300ms ease-in-out;
 `;
 
 const GameArea = styled.section`
