@@ -5,16 +5,18 @@ import BoardControls from "../board-controls/BoardControls";
 import S from "./App.styled";
 import { ThemeProvider } from "styled-components";
 import darkTheme from "../../themes/dark";
-// import lightTheme from "../../themes/light";
+import lightTheme from "../../themes/light";
 
 const App = () => {
+  const stored = localStorage.getItem("isDarkMode");
+  const [isDarkMode, setIsDarkMode] = useState(!!stored | true);
   const [currentlySelectedTool, setCurrentlySelectedTool] = useState("air");
   const [dragging, setDragging] = useState(false);
 
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <S.Container onMouseUp={() => setDragging(false)}>
-        <Header />
+        <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
         <S.GameArea>
           <Board
             currentTool={currentlySelectedTool}

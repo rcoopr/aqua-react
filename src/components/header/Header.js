@@ -2,7 +2,7 @@ import React from "react";
 import Ocitcon, { MarkGithub } from "@primer/octicons-react";
 import S from "./Header.styled";
 
-const Header = ({ title }) => {
+const Header = ({ isDarkMode, setIsDarkMode }) => {
   return (
     <S.Nav>
       <S.AppTitle>Aquarium</S.AppTitle>
@@ -14,7 +14,16 @@ const Header = ({ title }) => {
             <Ocitcon icon={MarkGithub} verticalAlign="middle" size="medium" />
           </a>
         </S.GithubLink>
-        <S.ThemeSwitch>Switch</S.ThemeSwitch>
+        <S.ThemeSwitch>
+          <button
+            onClick={() => {
+              setIsDarkMode(!isDarkMode);
+              localStorage.setItem("isDarkMode", !isDarkMode);
+            }}
+          >
+            Switch
+          </button>
+        </S.ThemeSwitch>
       </S.AppInfo>
     </S.Nav>
   );
