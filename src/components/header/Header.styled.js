@@ -12,10 +12,6 @@ const HeaderFlow = keyframes`
   }
 `;
 
-const StyledLi = styled.li`
-  margin: 0 0.4em;
-`;
-
 const Nav = styled.nav`
   display: flex;
   align-items: center;
@@ -23,17 +19,14 @@ const Nav = styled.nav`
   flex-wrap: wrap;
 `;
 
-const Timer = styled(StyledLi)``;
-
 // export const ControlsPrompt = styled(StyledLi)``;
 
-const GithubLink = styled(StyledLi)`
+const GithubLink = styled.li`
+  margin: 0.4em;
   a {
     color: inherit;
   }
 `;
-
-const ThemeSwitch = styled(StyledLi)``;
 
 const AppInfo = styled.ul`
   margin: 0.5em;
@@ -57,10 +50,8 @@ const AppTitle = styled.h1`
 
 const S = {
   Nav,
-  Timer,
   // ControlsPrompt,
   GithubLink,
-  ThemeSwitch,
   AppInfo,
   AppTitle
 };

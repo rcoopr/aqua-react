@@ -5,7 +5,7 @@ const ThemeSwitch = styled.div`
   height: 34px;
   position: relative;
   margin: 0.4em;
-  background-color: ${props => props.theme.colors.backgroundLight};
+  background-color: ${props => props.theme.colors.bgLightTranslucent};
   transition: background-color 0.3s ease-in;
   border-radius: 999em;
 `;

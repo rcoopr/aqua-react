@@ -4,7 +4,7 @@ const Tile = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid ${props => props.theme.colors.backgroundLight};
+  border: 1px solid ${props => props.theme.colors.bgLightTranslucent};
 `;
 
 const BoardTile = styled(Tile)`
@@ -36,7 +36,7 @@ const NumberTile = styled(Tile)`
   border: none;
   border-radius: 20%;
   background: ${props =>
-    props.value !== -1 && props.theme.colors.backgroundLight};
+    props.value !== -1 && props.theme.colors.bgLightTranslucent};
   opacity: ${props => (props.faded === true ? 0.2 : 1)};
 `;
 
