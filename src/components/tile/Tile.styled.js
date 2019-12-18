@@ -8,6 +8,7 @@ const Tile = styled.li`
 `;
 
 const BoardTile = styled(Tile)`
+  transition: all 250ms ease-out;
   ${props =>
     props.value === "water" &&
     css`
