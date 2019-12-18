@@ -1,5 +1,6 @@
 import React from "react";
 import Ocitcon, { MarkGithub } from "@primer/octicons-react";
+import ThemeSwitch from "../theme-switch/ThemeSwitch";
 import S from "./Header.styled";
 
 const Header = ({ isDarkMode, setIsDarkMode }) => {
@@ -14,16 +15,7 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
             <Ocitcon icon={MarkGithub} verticalAlign="middle" size="medium" />
           </a>
         </S.GithubLink>
-        <S.ThemeSwitch>
-          <button
-            onClick={() => {
-              setIsDarkMode(!isDarkMode);
-              localStorage.setItem("isDarkMode", !isDarkMode);
-            }}
-          >
-            Switch
-          </button>
-        </S.ThemeSwitch>
+        <ThemeSwitch isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       </S.AppInfo>
     </S.Nav>
   );
