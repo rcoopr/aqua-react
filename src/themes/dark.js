@@ -1,8 +1,9 @@
 export default {
   colors: {
-    background: "#22272D",
-    backgroundLight: "#445F7888",
-    backgroundContrast: "#fff",
+    bg: "#22272D",
+    bgLight: "#445F78",
+    bgLightTranslucent: "#445F7888",
+    bgContrast: "#fff",
     primary: "#A8CBDB",
     accent: "#A8CBDB",
     // accent: "#EBEE68", high contrast
