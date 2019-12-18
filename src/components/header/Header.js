@@ -1,6 +1,7 @@
 import React from "react";
 import Ocitcon, { MarkGithub } from "@primer/octicons-react";
 import ThemeSwitch from "../theme-switch/ThemeSwitch";
+import Timer from "../timer/Timer";
 import S from "./Header.styled";
 
 const Header = ({ isDarkMode, setIsDarkMode }) => {
@@ -8,7 +9,7 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
     <S.Nav>
       <S.AppTitle>Aquarium</S.AppTitle>
       <S.AppInfo>
-        <S.Timer>00:00</S.Timer>
+        <Timer hidden={false} />
         {/* <ControlsPrompt>Controls</ControlsPrompt> */}
         <S.GithubLink>
           <a href="https://github.com/Froskk">
