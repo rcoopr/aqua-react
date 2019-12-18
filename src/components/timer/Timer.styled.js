@@ -7,6 +7,7 @@ const Timer = styled.li`
   align-items: center;
   justify-content: center;
   position: relative;
+  letter-spacing: 0.5px;
 
   &::after {
     display: block;
