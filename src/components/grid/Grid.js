@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import BoardTile from "../tile/BoardTile";
 import S from "./Grid.styled";
+import { ToolContext } from "../tool-context/ToolContext";
 
 const Grid = ({
   length,
@@ -8,9 +9,10 @@ const Grid = ({
   setBoardState,
   dragging,
   setDragging,
-  currentTool,
   boardLayout
 }) => {
+  const [currentTool] = useContext(ToolContext);
+
   const updateBoardState = tileID => {
     const newBoardState = [...boardState];
     newBoardState[tileID] = currentTool;

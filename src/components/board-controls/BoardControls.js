@@ -1,8 +1,10 @@
-import React from "react";
-
+import React, { useContext } from "react";
 import S from "./BoardControls.styled";
+import { ToolContext } from "../tool-context/ToolContext";
 
-const BoardControls = ({ currentTool, setCurrentTool }) => {
+const BoardControls = () => {
+  const [currentTool, setCurrentTool] = useContext(ToolContext);
+
   return (
     <S.ToolTray>
       <S.Tool
