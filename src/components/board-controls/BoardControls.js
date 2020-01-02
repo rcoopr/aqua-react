@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import S from "./BoardControls.styled";
 import { ToolContext } from "../tool-context/ToolContext";
 
-const BoardControls = () => {
+const BoardControls = ({ boardID, setBoardID }) => {
   const { currentTool, setCurrentTool, setTemporaryTool } = useContext(
     ToolContext
   );
@@ -40,7 +40,12 @@ const BoardControls = () => {
         <S.TrashIcon />
       </S.Tool>
       <S.Selector>
-        <select>
+        <select
+          value={boardID + 1}
+          onChange={e => {
+            setBoardID(e.target.value - 1);
+          }}
+        >
           <option value="1">Board 1</option>
           <option value="2">Board 2</option>
           <option value="3">Board 3</option>
