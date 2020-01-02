@@ -7,7 +7,8 @@ const BoardTile = ({
   borderBottom,
   borderRight,
   onMouseDown = () => {},
-  onMouseOver = () => {}
+  onMouseOver = () => {},
+  onMouseUp = () => {}
 }) => {
   return (
     <S.BoardTile
@@ -17,6 +18,7 @@ const BoardTile = ({
       borderRight={borderRight}
       onMouseDown={() => onMouseDown(id)}
       onMouseOver={() => onMouseOver(id)}
+      onMouseUp={() => onMouseUp()}
     />
   );
 };

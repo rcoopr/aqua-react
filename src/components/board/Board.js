@@ -7,7 +7,7 @@ import Grid from "../grid/Grid";
 const board = boards[2];
 // const labels = [...boards.content[0].labels.column, ...boards.content[0].labels.row];
 
-const Board = ({ currentTool, dragging, setDragging }) => {
+const Board = ({ dragging, setDragging }) => {
   const storedBoard = localStorage.getItem("boardState")
     ? JSON.parse(localStorage.getItem("boardState"))
     : null;
@@ -35,7 +35,6 @@ const Board = ({ currentTool, dragging, setDragging }) => {
         boardLayout={board.board.flat(1)}
         dragging={dragging}
         setDragging={setDragging}
-        currentTool={currentTool}
       />
     </S.GridArea>
   );
