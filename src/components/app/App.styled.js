@@ -17,6 +17,7 @@ const GameArea = styled.section`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  touch-action: none;
 `;
 
 const S = {
