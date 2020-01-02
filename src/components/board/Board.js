@@ -8,8 +8,6 @@ const board = boards[2];
 // const labels = [...boards.content[0].labels.column, ...boards.content[0].labels.row];
 
 const Board = ({ currentTool, dragging, setDragging }) => {
-  // TODO: add board logic including selecting a board
-
   const storedBoard = localStorage.getItem("boardState")
     ? JSON.parse(localStorage.getItem("boardState"))
     : null;
