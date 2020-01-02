@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Board from "./Board";
 import { ToolContextProvider } from "../tool-context/ToolContext";
-import { boards } from "../board-data/BoardData";
 import { ThemeProvider } from "styled-components";
 import darkTheme from "../../themes/dark";
 
@@ -11,7 +10,7 @@ it("renders without crashing", () => {
   ReactDOM.render(
     <ThemeProvider theme={darkTheme}>
       <ToolContextProvider>
-        <Board boardData={boards[0]} />
+        <Board boardID={0} />
       </ToolContextProvider>
     </ThemeProvider>,
     div

@@ -5,10 +5,10 @@ const Tile = styled.li`
   align-items: center;
   justify-content: center;
   border: 1px solid ${props => props.theme.colors.bgLightTranslucent};
+  transition: all 250ms ease-out;
 `;
 
 const BoardTile = styled(Tile)`
-  transition: all 250ms ease-out;
   ${props =>
     props.value === "water" &&
     css`

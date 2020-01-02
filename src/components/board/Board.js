@@ -3,11 +3,11 @@ import S from "./Board.styled";
 import { boards } from "../board-data/BoardData";
 import NumberTile from "../tile/NumberTile";
 import Grid from "../grid/Grid";
-
-const board = boards[2];
 // const labels = [...boards.content[0].labels.column, ...boards.content[0].labels.row];
 
-const Board = ({ dragging, setDragging }) => {
+const Board = ({ boardID, dragging, setDragging }) => {
+  const board = boards[boardID];
+
   const storedBoard = localStorage.getItem("boardState")
     ? JSON.parse(localStorage.getItem("boardState"))
     : null;
