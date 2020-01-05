@@ -55,6 +55,19 @@ const data = {
         ["l", "n", "o", "o", "m", "p", "h", "q"],
         ["n", "n", "n", "r", "s", "q", "q", "q"]
       ]
+    },
+    {
+      id: 4,
+      difficulty: "easy",
+      labels: {
+        column: [-1, 2, -1],
+        row: [2, -1, 1]
+      },
+      board: [
+        ["a", "a", "b"],
+        ["c", "c", "d"],
+        ["e", "c", "d"]
+      ]
     }
   ],
   meta: ""
