@@ -4,7 +4,7 @@ import ThemeSwitch from "../theme-switch/ThemeSwitch";
 import Timer from "../timer/Timer";
 import S from "./Header.styled";
 
-const Header = ({ isDarkMode, setIsDarkMode }) => {
+const Header = () => {
   return (
     <S.Nav>
       <S.AppTitle>Aquarium</S.AppTitle>
@@ -16,7 +16,7 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
             <Ocitcon icon={MarkGithub} verticalAlign="middle" size="medium" />
           </a>
         </S.GithubLink>
-        <ThemeSwitch isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+        <ThemeSwitch />
       </S.AppInfo>
     </S.Nav>
   );

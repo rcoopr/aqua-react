@@ -1,51 +1,20 @@
-import React, { useContext } from "react";
+import React from "react";
 import S from "./BoardControls.styled";
-import { ToolContext } from "../tool-context/ToolContext";
 
-const BoardControls = ({ boardID, setBoardID }) => {
-  const { currentTool, setCurrentTool, setTemporaryTool } = useContext(
-    ToolContext
-  );
-
+const BoardControls = () => {
   return (
     <S.ToolTray>
-      <S.Tool
-        active={currentTool === "air"}
-        name="air"
-        onClick={() => {
-          setCurrentTool("air");
-          setTemporaryTool("air");
-        }}
-      >
-        <S.AirIcon />
-      </S.Tool>
-      <S.Tool
-        active={currentTool === "water"}
-        name="water"
-        onClick={() => {
-          setCurrentTool("water");
-          setTemporaryTool("water");
-        }}
-      >
+      <S.Tool>
         <S.WaterIcon />
       </S.Tool>
-      <S.Tool
-        active={currentTool === "trash"}
-        name="trash"
-        onClick={() => {
-          setCurrentTool("trash");
-          setTemporaryTool("trash");
-        }}
-      >
+      <S.Tool>
+        <S.AirIcon />
+      </S.Tool>
+      <S.Tool>
         <S.TrashIcon />
       </S.Tool>
       <S.Selector>
-        <select
-          value={boardID + 1}
-          onChange={e => {
-            setBoardID(e.target.value - 1);
-          }}
-        >
+        <select value={1}>
           <option value="1">Board 1</option>
           <option value="2">Board 2</option>
           <option value="3">Board 3</option>

@@ -1,17 +1,10 @@
 import React from "react";
 import S from "./ThemeSwitch.styled";
 
-const ThemeSwitch = ({ isDarkMode, setIsDarkMode }) => {
+const ThemeSwitch = () => {
   return (
     <S.ThemeSwitch>
-      <S.HiddenInput
-        type="checkbox"
-        id="dn"
-        onClick={() => {
-          setIsDarkMode(!isDarkMode);
-          localStorage.setItem("isDarkMode", !isDarkMode);
-        }}
-      />
+      <S.HiddenInput type="checkbox" id="dn" />
       <S.Label htmlFor="dn">
         <S.Icon />
       </S.Label>
