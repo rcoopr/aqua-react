@@ -2,20 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 
-import { Provider } from "react-redux";
 import { createStore } from "redux";
+import { Provider } from "react-redux";
 
 import { game } from "./redux/reducers";
 
 import "./index.css";
 import { App } from "./components/App";
-
-// ActionCreator
-// const toggleTheme = () => {
-//   return {
-//     type: "TOGGLE_THEME"
-//   };
-// };
 
 // Store
 const store = createStore(game);
