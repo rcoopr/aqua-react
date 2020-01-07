@@ -1,4 +1,4 @@
-export default {
+export const light = {
   colors: {
     bg: "#fff",
     bgLight: "#babaab",
