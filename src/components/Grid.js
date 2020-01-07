@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import BoardTile from "./Tile";
+import React from "react";
+import { BoardTile } from "./Tile";
 import styled from "styled-components";
 
 const GridWrapper = styled.ul`

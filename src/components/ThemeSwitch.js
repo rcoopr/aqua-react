@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { toggleTheme } from "../redux/actions";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -52,7 +53,7 @@ export const ThemeSwitch = () => {
       <HiddenInput
         type="checkbox"
         id="dn"
-        onClick={() => dispatch({ type: "TOGGLE_THEME" })}
+        onClick={() => dispatch(toggleTheme())}
       />
       <Label htmlFor="dn">
         <Icon />

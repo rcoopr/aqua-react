@@ -11,8 +11,12 @@ const theme = (state = "dark", action) => {
 
 const timer = (state = { time: 0, hidden: false }, action) => {
   switch (action.type) {
-    case "TOGGLE_HIDDEN":
+    case "TOGGLE_TIMER":
       return { ...state, hidden: !state.hidden };
+    case "START_TIMER":
+      return { ...state, time: 0 };
+    case "SET_TIMER":
+      return { ...state, time: action.payload };
     default:
       return state;
   }

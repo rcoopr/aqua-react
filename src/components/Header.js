@@ -55,7 +55,7 @@ export const Header = () => {
     <Nav>
       <AppTitle>Aquarium</AppTitle>
       <AppInfo>
-        <Timer hidden={false} />
+        <Timer />
         <GithubLink>
           <a href="https://github.com/Froskk">
             <Ocitcon icon={MarkGithub} verticalAlign="middle" size="medium" />
