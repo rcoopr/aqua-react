@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 import { Header } from "./Header";
 
 import styled, { ThemeProvider } from "styled-components";
-import dark from "../themes/dark";
-import light from "../themes/light";
+import { dark } from "../themes/dark";
+import { light } from "../themes/light";
 
 const Container = styled.main`
   background: ${props => props.theme.colors.bg};

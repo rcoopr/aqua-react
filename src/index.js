@@ -3,7 +3,9 @@ import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 
 import { Provider } from "react-redux";
-import { createStore, combineReducers } from "redux";
+import { createStore } from "redux";
+
+import { game } from "./redux/reducers";
 
 import "./index.css";
 import { App } from "./components/App";
@@ -15,27 +17,8 @@ import { App } from "./components/App";
 //   };
 // };
 
-// Reducer
-const theme = (state = "dark", action) => {
-  switch (action.type) {
-    case "TOGGLE_THEME":
-      return state === "dark" ? "light" : "dark";
-    default:
-      return state;
-  }
-};
-
-const timer = (state = { time: 0, hidden: false }, action) => {
-  switch (action.type) {
-    case "TOGGLE_HIDDEN":
-      return { ...state, hidden: !state.hidden };
-    default:
-      return state;
-  }
-};
-
 // Store
-const store = createStore(combineReducers({ theme, timer }));
+const store = createStore(game);
 
 ReactDOM.render(
   <Provider store={store}>

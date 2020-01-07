@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import formatTime from "../utils/formatTime";
+import { formatTime } from "../utils/formatTime";
 import styled from "styled-components";
 
 const Wrapper = styled.li`

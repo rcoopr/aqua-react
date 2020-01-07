@@ -1,7 +1,7 @@
 import React from "react";
 import Ocitcon, { MarkGithub } from "@primer/octicons-react";
-import ThemeSwitch from "./ThemeSwitch";
-import Timer from "./Timer";
+import { ThemeSwitch } from "./ThemeSwitch";
+import { Timer } from "./Timer";
 import styled, { keyframes } from "styled-components";
 
 const HeaderFlow = keyframes`
