@@ -2,6 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import { Header } from "./Header";
+import { Board } from "./Board";
+import { BoardControls } from "./BoardControls";
 
 import styled, { ThemeProvider } from "styled-components";
 import { dark } from "../themes/dark";
@@ -33,8 +35,10 @@ export const App = () => {
     <ThemeProvider theme={theme === "dark" ? dark : light}>
       <Container>
         <Header />
-        <GameArea>{/* <Board />
-          <BoardControls /> */}</GameArea>
+        <GameArea>
+          <Board />
+          <BoardControls />
+        </GameArea>
       </Container>
     </ThemeProvider>
   );

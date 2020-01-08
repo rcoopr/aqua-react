@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
+import { boards } from "../utils/BoardData";
 
 const theme = (state = "dark", action) => {
   switch (action.type) {
@@ -22,4 +23,72 @@ const timer = (state = { time: 0, hidden: false }, action) => {
   }
 };
 
-export const game = combineReducers({ theme, timer });
+const controls = (
+  state = { tool: "WATER", fill: "WATER", dragging: false },
+  action
+) => {
+  switch (action.type) {
+    case "SET_TOOL":
+      return { ...state, tool: action.payload };
+    case "SET_FILL":
+      return { ...state, fill: action.payload };
+    case "SET_DRAGGING":
+      return { ...state, dragging: action.payload };
+    default:
+      return state;
+  }
+};
+
+const board = (
+  state = {
+    labels: boards[1].labels,
+    board: {
+      playing: Array(boards[1].regions.length ** 2).fill("EMPTY"),
+      regions: boards[1].regions,
+      completed: null
+    }
+  },
+  action
+) => {
+  switch (action.type) {
+    case "SELECT_BOARD":
+      console.log("select board", boards[action.payload].labels);
+
+      return {
+        ...state,
+        labels: {
+          ...boards[action.payload].labels
+        },
+        board: {
+          id: action.payload,
+          playing: Array(boards[action.payload].regions.length ** 2).fill(
+            "EMPTY"
+          ),
+          regions: boards[action.payload].regions,
+          completed: boards[action.payload].completed
+        }
+      };
+    case "FILL_TILE":
+      const newPlayingState = state.board.playing;
+      newPlayingState[action.payload.index] = action.payload.fill;
+      // localStorage.setItem("boardState", JSON.stringify(newPlayingState));
+
+      return {
+        ...state,
+        board: {
+          ...state.board,
+          playing: newPlayingState
+        }
+      };
+    default:
+      return state;
+  }
+};
+
+export const game = combineReducers({ theme, timer, controls, board });
+
+// board: {
+// playing: [fills],
+// regions: [boarddata],
+// completed: [correct fills]
+// }

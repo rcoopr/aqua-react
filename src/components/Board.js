@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 
-import { connect } from "react-redux";
-import { selectBoard } from "../redux/actions";
-
-// import NumberTile from "../tile/NumberTile";
-// import Grid from "../grid/Grid";
+import { NumberTile } from "./Tile";
+import { Grid } from "./Grid";
 
 import styled, { css } from "styled-components";
 
@@ -42,31 +40,25 @@ const LabelColumn = styled.ul`
   grid-area: 2 / 1 / 3 / 2;
 `;
 
-export const Board = ({ selectBoard }) => {
-  // const [boardState, setBoardState] = useState(
-  //   Array(board.board.length ** 2).fill("empty")
-  // );
+export const Board = () => {
+  const board = useSelector(state => state.board.board); // Stupid names
+  const labels = useSelector(state => state.board.labels);
+
+  const size = board.regions.length;
 
   return (
-    <div></div>
-    // <GridArea length={board.board.length}>
-    //   <LabelRow length={board.board.length}>
-    //     {board.labels.column.map((value, index) => (
-    //       <NumberTile key={`top-${value}-${index}`} value={value} id={index} />
-    //     ))}
-    //   </LabelRow>
-    //   <LabelColumn length={board.board.length}>
-    //     {board.labels.row.map((value, index) => (
-    //       <NumberTile key={`left-${value}-${index}`} value={value} id={index} />
-    //     ))}
-    //   </LabelColumn>
-    //   <Grid
-    //     length={board.board.length}
-    //     boardState={boardState}
-    //     setBoardState={setBoardState}
-    //     boardLayout={board.board.flat(1)}
-    //     dragging={dragging}
-    //   />
-    // </GridArea>
+    <GridArea length={size}>
+      <LabelRow length={size}>
+        {labels.top.map((value, index) => (
+          <NumberTile key={`top-${value}-${index}`} value={value} id={index} />
+        ))}
+      </LabelRow>
+      <LabelColumn length={size}>
+        {labels.left.map((value, index) => (
+          <NumberTile key={`left-${value}-${index}`} value={value} id={index} />
+        ))}
+      </LabelColumn>
+      <Grid />
+    </GridArea>
   );
 };

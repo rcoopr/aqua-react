@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
 const Tile = styled.li`
@@ -11,12 +11,12 @@ const Tile = styled.li`
 
 const StyledBoardTile = styled(Tile)`
   ${props =>
-    props.value === "water" &&
+    props.value === "WATER" &&
     css`
       background: ${props => props.theme.colors.water};
     `};
   ${props =>
-    props.value === "air" &&
+    props.value === "AIR" &&
     css`
       background: ${props => props.theme.colors.air};
     `};

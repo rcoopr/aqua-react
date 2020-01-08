@@ -1,13 +1,12 @@
 const data = {
-  content: [
-    {
-      id: 1,
+  content: {
+    1: {
       difficulty: "hard",
       labels: {
-        column: [6, 3, -1, 4, 3, 4, 3, 4],
-        row: [-1, 4, 4, -1, 5, -1, 4, -1]
+        top: [6, 3, -1, 4, 3, 4, 3, 4],
+        left: [-1, 4, 4, -1, 5, -1, 4, -1]
       },
-      board: [
+      regions: [
         ["a", "b", "b", "b", "b", "c", "c", "d"],
         ["a", "e", "e", "e", "b", "d", "d", "d"],
         ["f", "f", "f", "e", "g", "g", "g", "h"],
@@ -18,15 +17,14 @@ const data = {
         ["m", "m", "o", "o", "o", "p", "p", "p"]
       ]
     },
-    {
-      id: 2,
+    2: {
       difficulty: "easy",
       size: "8x8",
       labels: {
-        column: [3, 6, 5, 7, 1, 3, 3, 6],
-        row: [3, 4, 5, 4, 4, 5, 6, 3]
+        top: [3, 6, 5, 7, 1, 3, 3, 6],
+        left: [3, 4, 5, 4, 4, 5, 6, 3]
       },
-      board: [
+      regions: [
         ["a", "a", "b", "b", "b", "c", "d", "d"],
         ["a", "e", "e", "e", "c", "c", "c", "d"],
         ["a", "e", "f", "e", "g", "c", "d", "d"],
@@ -37,15 +35,14 @@ const data = {
         ["o", "o", "p", "p", "h", "h", "h", "k"]
       ]
     },
-    {
-      id: 3,
+    3: {
       difficulty: "hard",
       size: "8x8",
       labels: {
-        column: [2, 4, -1, 2, 4, -1, 2, 4],
-        row: [2, 4, -1, 2, 4, -1, 2, 4]
+        top: [2, 4, -1, 2, 4, -1, 2, 4],
+        left: [2, 4, -1, 2, 4, -1, 2, 4]
       },
-      board: [
+      regions: [
         ["a", "b", "c", "c", "d", "d", "e", "e"],
         ["a", "f", "f", "f", "g", "g", "g", "e"],
         ["a", "a", "a", "f", "h", "g", "h", "i"],
@@ -56,20 +53,19 @@ const data = {
         ["n", "n", "n", "r", "s", "q", "q", "q"]
       ]
     },
-    {
-      id: 4,
+    4: {
       difficulty: "easy",
       labels: {
-        column: [-1, 2, -1],
-        row: [2, -1, 1]
+        top: [-1, 2, -1],
+        left: [2, -1, 1]
       },
-      board: [
+      regions: [
         ["a", "a", "b"],
         ["c", "c", "d"],
         ["e", "c", "d"]
       ]
     }
-  ],
+  },
   meta: ""
 };
 

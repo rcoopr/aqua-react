@@ -1,4 +1,6 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setDragging, setFill, fillTile } from "../redux/actions";
 import { BoardTile } from "./Tile";
 import styled from "styled-components";
 
@@ -19,49 +21,51 @@ const GridWrapper = styled.ul`
 `;
 
 export const Grid = () => {
-  const updateBoardState = (tileID, fill = currentTool) => {
-    const newBoardState = [...boardState];
-    newBoardState[tileID] = fill;
-    setBoardState(newBoardState);
-    localStorage.setItem("boardState", JSON.stringify(newBoardState));
-  };
+  const board = useSelector(state => state.board.board); // Still stupid
+  const { tool, fill, dragging } = useSelector(state => state.controls);
+  const dispatch = useDispatch();
 
   const handleMouseDown = tileID => {
-    setDragging(true);
+    console.log(board.playing);
 
-    if (boardState[tileID] === currentTool) {
-      setCurrentTool("trash", updateBoardState(tileID, "trash"));
-    } else {
-      updateBoardState(tileID);
+    dispatch(setDragging(true));
+
+    if (board.playing[tileID] === tool) {
+      setFill("EMPTY");
     }
 
-    // Above, setCurrentTool to "trash",  but on click it registers the previous state
-    // console.log("mousedown", currentTool, "state", boardState[tileID]);
+    dispatch(fillTile(tileID));
+    console.log(tileID, tool, fill);
   };
 
   const handleMouseOver = tileID => {
     if (!dragging) return;
-    updateBoardState(tileID);
+    dispatch(fillTile(tileID));
   };
 
-  const handleMouseUp = () => setCurrentTool(temporaryTool);
+  const handleMouseUp = () => {
+    setDragging(false);
+    setFill(tool);
+  };
 
-  const boardLength = boardState.length ** 0.5;
+  const size = board.regions.length;
+  const boardLayout = board.regions.flat(1);
+  const boardPlaying = board.playing;
 
   return (
-    <GridWrapper length={boardLength}>
-      {boardState.map((value, index) => {
+    <GridWrapper length={size}>
+      {boardLayout.map((value, index) => {
         // Current issues: it checks value out of bounds or on next row.
         // Also may double-count some boundaries.
         const valueToRight = boardLayout[index + 1];
-        const valueBelow = boardLayout[index + boardLength] || "";
-        const borderRight = valueToRight !== boardLayout[index];
-        const borderBottom = valueBelow !== boardLayout[index];
+        const valueBelow = boardLayout[index + size] || "";
+        const borderRight = valueToRight !== value;
+        const borderBottom = valueBelow !== value;
 
         return (
           <BoardTile
             key={index}
-            value={value}
+            value={boardPlaying[index]}
             id={index}
             borderRight={borderRight}
             borderBottom={borderBottom}
