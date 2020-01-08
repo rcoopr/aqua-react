@@ -22,7 +22,7 @@ const GridWrapper = styled.ul`
 
 export const Grid = () => {
   const board = useSelector(state => state.board.board); // Still stupid
-  const { tool, fill, dragging } = useSelector(state => state.controls);
+  const { tool, dragging } = useSelector(state => state.controls);
   const dispatch = useDispatch();
 
   const handleMouseDown = tileID => {
