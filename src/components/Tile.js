@@ -13,12 +13,12 @@ const StyledBoardTile = styled(Tile)`
   ${props =>
     props.value === "WATER" &&
     css`
-      background: ${props => props.theme.colors.water};
+      background: ${props => props.theme.colors.WATER};
     `};
   ${props =>
     props.value === "AIR" &&
     css`
-      background: ${props => props.theme.colors.air};
+      background: ${props => props.theme.colors.AIR};
     `};
   ${props =>
     props.borderRight &&

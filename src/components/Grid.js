@@ -26,16 +26,13 @@ export const Grid = () => {
   const dispatch = useDispatch();
 
   const handleMouseDown = tileID => {
-    console.log(board.playing);
-
     dispatch(setDragging(true));
 
     if (board.playing[tileID] === tool) {
-      setFill("EMPTY");
+      dispatch(setFill("EMPTY"));
     }
 
     dispatch(fillTile(tileID));
-    console.log(tileID, tool, fill);
   };
 
   const handleMouseOver = tileID => {
@@ -44,8 +41,8 @@ export const Grid = () => {
   };
 
   const handleMouseUp = () => {
-    setDragging(false);
-    setFill(tool);
+    dispatch(setDragging(false));
+    dispatch(setFill(tool));
   };
 
   const size = board.regions.length;
