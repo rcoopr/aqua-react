@@ -1,3 +1,5 @@
+const { w, a } = { w: "WATER", a: "AIR" };
+
 const data = {
   content: {
     1: {
@@ -15,6 +17,16 @@ const data = {
         ["j", "e", "e", "e", "g", "i", "g", "l"],
         ["m", "n", "n", "o", "g", "g", "g", "l"],
         ["m", "m", "o", "o", "o", "p", "p", "p"]
+      ],
+      completed: [
+        [w, a, a, a, a, a, a, a],
+        [w, a, a, a, a, w, w, w],
+        [w, w, w, a, a, a, a, w],
+        [w, a, a, a, a, a, a, w],
+        [w, a, w, w, a, w, a, w],
+        [w, w, w, w, w, w, w, a],
+        [a, a, a, w, w, w, w, a],
+        [a, a, w, w, w, a, a, a]
       ]
     },
     2: {
@@ -33,6 +45,16 @@ const data = {
         ["l", "e", "m", "n", "h", "k", "i", "i"],
         ["l", "e", "m", "n", "h", "k", "k", "k"],
         ["o", "o", "p", "p", "h", "h", "h", "k"]
+      ],
+      completed: [
+        [a, a, w, w, w, a, a, a],
+        [a, w, w, w, a, a, a, w],
+        [a, w, a, w, a, w, w, w],
+        [w, w, w, w, a, a, a, a],
+        [w, w, w, a, a, a, a, w],
+        [a, w, a, w, a, w, w, w],
+        [w, w, a, w, a, w, w, w],
+        [a, a, w, w, a, a, a, w]
       ]
     },
     3: {
@@ -51,6 +73,16 @@ const data = {
         ["l", "f", "f", "f", "m", "m", "h", "i"],
         ["l", "n", "o", "o", "m", "p", "h", "q"],
         ["n", "n", "n", "r", "s", "q", "q", "q"]
+      ],
+      completed: [
+        [a, a, a, a, w, w, a, a],
+        [a, a, a, a, w, w, w, w],
+        [w, w, w, a, a, w, a, a],
+        [a, a, a, a, a, w, a, w],
+        [a, w, w, w, a, a, a, w],
+        [a, w, w, w, a, a, a, w],
+        [a, a, a, a, w, a, w, a],
+        [w, w, w, a, w, a, a, a]
       ]
     },
     4: {
@@ -63,6 +95,11 @@ const data = {
         ["a", "a", "b"],
         ["c", "c", "d"],
         ["e", "c", "d"]
+      ],
+      completed: [
+        [w, w, a],
+        [a, a, a],
+        [a, w, a]
       ]
     }
   },
