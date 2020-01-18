@@ -15,8 +15,8 @@ const GridWrapper = styled.ul`
   grid-gap: 0px;
   list-style: none;
   padding: 0;
-  border-top: 2px solid ${props => props.theme.colors.accent};
-  border-left: 2px solid ${props => props.theme.colors.accent};
+  border: 2px solid ${props => props.theme.colors.accent};
+  border-radius: 4px;
   font-size: calc(3vmin + 10px);
 `;
 
@@ -54,18 +54,19 @@ export const Grid = () => {
       {boardLayout.map((value, index) => {
         // Current issues: it checks value out of bounds or on next row.
         // Also may double-count some boundaries.
-        const valueToRight = boardLayout[index + 1];
-        const valueBelow = boardLayout[index + size] || "";
-        const borderRight = valueToRight !== value;
-        const borderBottom = valueBelow !== value;
+        const borders = {
+          top: boardLayout[index - size] !== value,
+          right: boardLayout[index + 1] !== value,
+          bottom: boardLayout[index + size] !== value,
+          left: boardLayout[index - 1] !== value
+        };
 
         return (
           <BoardTile
             key={index}
             value={boardPlaying[index]}
             id={index}
-            borderRight={borderRight}
-            borderBottom={borderBottom}
+            borders={borders}
             onMouseDown={handleMouseDown}
             onMouseOver={handleMouseOver}
             onMouseUp={handleMouseUp}
