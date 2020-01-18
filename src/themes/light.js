@@ -1,11 +1,11 @@
 export const light = {
   colors: {
     bg: "#fff",
-    bgLight: "#babaab",
-    bgLightTranslucent: "#babaab88",
+    bgLight: "#cbd5e0",
+    bgLightTranslucent: "#cbd5e088",
     bgContrast: "#000",
-    primary: "#6D6D54",
-    accent: "#6D6D54",
+    primary: "#4a5568",
+    accent: "#4a5568",
     // accent: "#EBEE68", high contrast
     AIR: "#BDE7CF",
     WATER: "#5CCFE6",
