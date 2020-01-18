@@ -32,6 +32,7 @@ const Tool = styled.li`
 `;
 
 const svg = css`
+  font-size: calc(1.1vmin + 8px);
   width: 3em;
   height: 3em;
   margin: 0.6em;
