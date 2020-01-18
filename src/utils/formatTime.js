@@ -1,4 +1,4 @@
-export default ms => {
+export const formatTime = ms => {
   const seconds = Math.floor((ms % 60000) / 1000);
   const mins = Math.floor(ms / 60000);
 

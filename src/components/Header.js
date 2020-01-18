@@ -1,3 +1,7 @@
+import React from "react";
+import Ocitcon, { MarkGithub } from "@primer/octicons-react";
+import { ThemeSwitch } from "./ThemeSwitch";
+import { Timer } from "./Timer";
 import styled, { keyframes } from "styled-components";
 
 const HeaderFlow = keyframes`
@@ -18,8 +22,6 @@ const Nav = styled.nav`
   justify-content: space-around;
   flex-wrap: wrap;
 `;
-
-// export const ControlsPrompt = styled(StyledLi)``;
 
 const GithubLink = styled.li`
   margin: 0.4em;
@@ -48,12 +50,19 @@ const AppTitle = styled.h1`
   animation: ${HeaderFlow} 15s ease infinite;
 `;
 
-const S = {
-  Nav,
-  // ControlsPrompt,
-  GithubLink,
-  AppInfo,
-  AppTitle
+export const Header = () => {
+  return (
+    <Nav>
+      <AppTitle>Aquarium</AppTitle>
+      <AppInfo>
+        <Timer />
+        <GithubLink>
+          <a href="https://github.com/Froskk">
+            <Ocitcon icon={MarkGithub} verticalAlign="middle" size="medium" />
+          </a>
+        </GithubLink>
+        <ThemeSwitch />
+      </AppInfo>
+    </Nav>
+  );
 };
-
-export default S;

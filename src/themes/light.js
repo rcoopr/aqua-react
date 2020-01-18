@@ -1,4 +1,4 @@
-export default {
+export const light = {
   colors: {
     bg: "#fff",
     bgLight: "#babaab",
@@ -7,9 +7,9 @@ export default {
     primary: "#6D6D54",
     accent: "#6D6D54",
     // accent: "#EBEE68", high contrast
-    air: "#BDE7CF",
-    water: "#5CCFE6",
-    trash: "#FF7C5C",
+    AIR: "#BDE7CF",
+    WATER: "#5CCFE6",
+    EMPTY: "#FF7C5C",
     svgFill: "#22272D"
   }
 };

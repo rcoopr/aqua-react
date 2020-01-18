@@ -1,6 +1,9 @@
+import React from "react";
+import { useDispatch } from "react-redux";
+import { toggleTheme } from "../redux/actions";
 import styled from "styled-components";
 
-const ThemeSwitch = styled.div`
+const Wrapper = styled.div`
   width: 75px;
   height: 34px;
   position: relative;
@@ -42,11 +45,19 @@ const Icon = styled.div`
   transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 `;
 
-const S = {
-  ThemeSwitch,
-  HiddenInput,
-  Label,
-  Icon
-};
+export const ThemeSwitch = () => {
+  const dispatch = useDispatch();
 
-export default S;
+  return (
+    <Wrapper>
+      <HiddenInput
+        type="checkbox"
+        id="dn"
+        onClick={() => dispatch(toggleTheme())}
+      />
+      <Label htmlFor="dn">
+        <Icon />
+      </Label>
+    </Wrapper>
+  );
+};
