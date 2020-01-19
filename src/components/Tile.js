@@ -67,7 +67,10 @@ export const BoardTile = ({
   borders,
   onMouseDown = () => {},
   onMouseOver = () => {},
-  onMouseUp = () => {}
+  onMouseUp = () => {},
+  onTouchMove = () => {},
+  onTouchStart = () => {},
+  onTouchEnd = () => {}
 }) => {
   return (
     <StyledBoardTile
@@ -77,6 +80,9 @@ export const BoardTile = ({
       onMouseDown={() => onMouseDown(id)}
       onMouseOver={() => onMouseOver(id)}
       onMouseUp={() => onMouseUp()}
+      onTouchStart={e => onTouchStart(e)}
+      onTouchMove={e => onTouchMove(e)}
+      onTouchEnd={() => onTouchEnd()}
     />
   );
 };
