@@ -56,12 +56,12 @@ export const Board = () => {
     <GridArea length={size}>
       <LabelRow length={size}>
         {labels.top.map((value, index) => (
-          <NumberTile key={`top-${value}-${index}`} value={value} id={index} />
+          <NumberTile key={`top-${value}-${index}`} value={value} />
         ))}
       </LabelRow>
       <LabelColumn length={size}>
         {labels.left.map((value, index) => (
-          <NumberTile key={`left-${value}-${index}`} value={value} id={index} />
+          <NumberTile key={`left-${value}-${index}`} value={value} />
         ))}
       </LabelColumn>
       <Grid />

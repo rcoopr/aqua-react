@@ -51,13 +51,12 @@ export const Grid = () => {
       e.touches[0].clientX,
       e.touches[0].clientY
     );
+
     const tileID = parseInt(currentTile.id);
 
     if (board.playing[tileID] === tool) {
       dispatch(setFill("EMPTY"));
     }
-
-    dispatch(fillTile(tileID));
   };
   const handleTouchEnd = () => {
     dispatch(setFill(tool));
@@ -80,8 +79,6 @@ export const Grid = () => {
   return (
     <GridWrapper length={size}>
       {boardLayout.map((value, index) => {
-        // Current issues: it checks value out of bounds or on next row.
-        // Also may double-count some boundaries.
         const borders = {
           top: boardLayout[index - size] !== value,
           right: boardLayout[index + 1] !== value,

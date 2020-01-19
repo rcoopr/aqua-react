@@ -44,14 +44,13 @@ const Content = styled.span`
   font-size: calc(3vmin + 10px);
 `;
 
-export const NumberTile = ({ value, id }) => {
+export const NumberTile = ({ value }) => {
   const [faded, setFaded] = useState(false);
 
   return (
     <StyledNumberTile
       value={value}
       faded={faded}
-      id={id}
       onClick={() => {
         if (value !== -1) setFaded(!faded);
       }}
