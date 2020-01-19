@@ -1,11 +1,16 @@
 import { combineReducers } from "redux";
 import { boards } from "../utils/BoardData";
 
-const theme = (state = "dark", action) => {
+const defaultTheme = localStorage.getItem("theme") || "dark";
+
+const theme = (state = defaultTheme, action) => {
   switch (action.type) {
     case "TOGGLE_THEME":
-      return state === "dark" ? "light" : "dark";
+      const newState = state === "dark" ? "light" : "dark";
+      localStorage.setItem("theme", newState);
+      return newState;
     default:
+      localStorage.setItem("theme", state);
       return state;
   }
 };

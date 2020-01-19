@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../redux/actions";
 import styled from "styled-components";
 
@@ -47,6 +47,7 @@ const Icon = styled.div`
 
 export const ThemeSwitch = () => {
   const dispatch = useDispatch();
+  const theme = useSelector(state => state.theme);
 
   return (
     <Wrapper>
@@ -54,6 +55,7 @@ export const ThemeSwitch = () => {
         type="checkbox"
         id="dn"
         onClick={() => dispatch(toggleTheme())}
+        defaultChecked={theme === "light"}
       />
       <Label htmlFor="dn">
         <Icon />
