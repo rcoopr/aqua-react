@@ -45,6 +45,33 @@ export const Grid = () => {
     dispatch(setFill(tool));
   };
 
+  const handleTouchStart = e => {
+    const currentTile = document.elementFromPoint(
+      e.touches[0].clientX,
+      e.touches[0].clientY
+    );
+    const tileID = parseInt(currentTile.id);
+
+    if (board.playing[tileID] === tool) {
+      dispatch(setFill("EMPTY"));
+    }
+
+    dispatch(fillTile(tileID));
+  };
+  const handleTouchEnd = () => {
+    dispatch(setFill(tool));
+  };
+
+  const handleTouchDrag = e => {
+    const currentTile = document.elementFromPoint(
+      e.touches[0].clientX,
+      e.touches[0].clientY
+    );
+    const tileID = parseInt(currentTile.id);
+
+    dispatch(fillTile(tileID));
+  };
+
   const size = board.regions.length;
   const boardLayout = board.regions.flat(1);
   const boardPlaying = board.playing;
@@ -70,6 +97,9 @@ export const Grid = () => {
             onMouseDown={handleMouseDown}
             onMouseOver={handleMouseOver}
             onMouseUp={handleMouseUp}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchDrag}
+            onTouchEnd={handleTouchEnd}
           />
         );
       })}
