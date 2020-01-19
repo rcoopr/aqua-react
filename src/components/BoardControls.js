@@ -16,22 +16,24 @@ const ToolTray = styled.ul`
 `;
 
 const Tool = styled.li`
-  background: #00000033;
   margin: 0.6em;
   border-radius: 0.5em;
   border-top: 2px solid #00000044;
   border-bottom: 2px solid #ffffff22;
-  &:active {
-    background: ${props => props.theme.colors[props.name]};
-  }
+
+  background: ${props => props.theme.colors.bgLightTranslucent};
   ${props =>
     props.active === props.name &&
     css`
       background: ${props => props.theme.colors[props.name]};
     `}
+  &:active {
+    background: ${props => props.theme.colors[props.name]};
+  }
 `;
 
 const svg = css`
+  font-size: calc(1.1vmin + 8px);
   width: 3em;
   height: 3em;
   margin: 0.6em;

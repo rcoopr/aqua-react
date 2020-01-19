@@ -9,6 +9,8 @@ const Tile = styled.li`
   transition: all 250ms ease-out;
 `;
 
+const regionBorderMixin = props => `2px solid ${props.theme.colors.accent}`;
+
 const StyledBoardTile = styled(Tile)`
   ${props =>
     props.value === "WATER" &&
@@ -20,16 +22,12 @@ const StyledBoardTile = styled(Tile)`
     css`
       background: ${props => props.theme.colors.AIR};
     `};
-  ${props =>
-    props.borderRight &&
-    css`
-      border-right: 2px solid ${props => props.theme.colors.accent};
-    `}
-  ${props =>
-    props.borderBottom &&
-    css`
-      border-bottom: 2px solid ${props => props.theme.colors.accent};
-    `}
+  ${props => css`
+    border-top: ${props.borders.top && regionBorderMixin(props)};
+    border-right: ${props.borders.right && regionBorderMixin(props)};
+    border-bottom: ${props.borders.bottom && regionBorderMixin(props)};
+    border-left: ${props.borders.left && regionBorderMixin(props)};
+  `}
 `;
 
 const StyledNumberTile = styled(Tile)`
@@ -66,8 +64,7 @@ export const NumberTile = ({ value, id }) => {
 export const BoardTile = ({
   value,
   id,
-  borderBottom,
-  borderRight,
+  borders,
   onMouseDown = () => {},
   onMouseOver = () => {},
   onMouseUp = () => {}
@@ -76,8 +73,7 @@ export const BoardTile = ({
     <StyledBoardTile
       value={value}
       id={id}
-      borderBottom={borderBottom}
-      borderRight={borderRight}
+      borders={borders}
       onMouseDown={() => onMouseDown(id)}
       onMouseOver={() => onMouseOver(id)}
       onMouseUp={() => onMouseUp()}

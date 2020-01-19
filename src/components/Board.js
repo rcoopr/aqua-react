@@ -11,12 +11,18 @@ const GridArea = styled.section`
     grid-template-columns: 1fr ${props.length}fr;
     grid-template-rows: 1fr ${props.length}fr;
   `}
-  width: 65vmin;
+  max-width: 90vmin;
+  max-height: 90vmin;
   height: 65vmin;
+  width: 65vmin;
   display: grid;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   user-select: none;
+  @media (max-width: 700px) {
+    width: calc(65vmin + (700px - 100vmin) * 7 / 8);
+    height: calc(65vmin + (700px - 100vmin) * 7 / 8);
+  }
 `;
 
 const LabelRow = styled.ul`
