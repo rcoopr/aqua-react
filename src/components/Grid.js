@@ -15,6 +15,7 @@ const GridWrapper = styled.ul`
   grid-gap: 0px;
   list-style: none;
   padding: 0;
+  transition: 300ms all cubic-bezier(0.39, 0.575, 0.565, 1);
   border: 2px solid ${props => props.theme.colors.accent};
   border-radius: 4px;
   font-size: calc(3vmin + 10px);

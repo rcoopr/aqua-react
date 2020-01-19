@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   position: relative;
   margin: 0.4em;
   background-color: ${props => props.theme.colors.bgLightTranslucent};
-  transition: background-color 0.3s ease-in;
+  transition: background-color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   border-radius: 999em;
 `;
 
