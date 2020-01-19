@@ -22,12 +22,14 @@ const Container = styled.main`
 
 const GameArea = styled.section`
   display: flex;
-  flex: 1;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   touch-action: none;
+  @media screen and (min-width: 800px) {
+    flex: 1;
+  }
 `;
 
 export const App = () => {
