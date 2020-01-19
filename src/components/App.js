@@ -16,7 +16,8 @@ const Container = styled.main`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: background 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95),
+    color 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 `;
 
 const GameArea = styled.section`
