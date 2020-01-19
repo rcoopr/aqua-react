@@ -31,6 +31,7 @@ const GameArea = styled.section`
 
 export const App = () => {
   const theme = useSelector(state => state.theme);
+
   return (
     <ThemeProvider theme={theme === "dark" ? dark : light}>
       <Container>
