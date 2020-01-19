@@ -15,6 +15,7 @@ const GridWrapper = styled.ul`
   grid-gap: 0px;
   list-style: none;
   padding: 0;
+  transition: 300ms all cubic-bezier(0.39, 0.575, 0.565, 1);
   border: 2px solid ${props => props.theme.colors.accent};
   border-radius: 4px;
   font-size: calc(3vmin + 10px);
@@ -50,13 +51,12 @@ export const Grid = () => {
       e.touches[0].clientX,
       e.touches[0].clientY
     );
+
     const tileID = parseInt(currentTile.id);
 
     if (board.playing[tileID] === tool) {
       dispatch(setFill("EMPTY"));
     }
-
-    dispatch(fillTile(tileID));
   };
   const handleTouchEnd = () => {
     dispatch(setFill(tool));
@@ -79,8 +79,6 @@ export const Grid = () => {
   return (
     <GridWrapper length={size}>
       {boardLayout.map((value, index) => {
-        // Current issues: it checks value out of bounds or on next row.
-        // Also may double-count some boundaries.
         const borders = {
           top: boardLayout[index - size] !== value,
           right: boardLayout[index + 1] !== value,

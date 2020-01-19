@@ -5,11 +5,11 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   width: 75px;
-  height: 34px;
+  height: 32px;
   position: relative;
   margin: 0.4em;
   background-color: ${props => props.theme.colors.bgLightTranslucent};
-  transition: background-color 0.3s ease-in;
+  transition: background-color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   border-radius: 999em;
 `;
 
@@ -34,14 +34,14 @@ const Label = styled.label`
 const Icon = styled.div`
   position: absolute;
   display: block;
-  top: 5px;
-  left: 5px;
+  top: 4px;
+  left: 4px;
   width: 24px;
   height: 24px;
   border-radius: 50%;
   background-color: transparent;
   box-shadow: inset -3px 3px 0 3px ${props => props.theme.colors.primary};
-  transform: translate3d(41px, 0, 0) rotate(180deg);
+  transform: translate3d(43px, 0, 0) rotate(180deg);
   transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 `;
 

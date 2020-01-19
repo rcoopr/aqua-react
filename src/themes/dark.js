@@ -3,6 +3,7 @@ export const dark = {
     bg: "#22272D",
     bgLight: "#445F78",
     bgLightTranslucent: "#445F7888",
+    bgLightTransOpaque: "#344455",
     bgContrast: "#fff",
     primary: "#A8CBDB",
     accent: "#A8CBDB",

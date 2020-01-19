@@ -16,17 +16,20 @@ const Container = styled.main`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  transition: all 300ms ease-in-out;
+  transition: background 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95),
+    color 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 `;
 
 const GameArea = styled.section`
   display: flex;
-  flex: 1;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   touch-action: none;
+  @media screen and (min-width: 800px) {
+    flex: 1;
+  }
 `;
 
 export const App = () => {

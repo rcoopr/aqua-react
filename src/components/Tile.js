@@ -6,7 +6,7 @@ const Tile = styled.li`
   align-items: center;
   justify-content: center;
   border: 1px solid ${props => props.theme.colors.bgLightTranslucent};
-  transition: all 250ms ease-out;
+  transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
 `;
 
 const regionBorderMixin = props => `2px solid ${props.theme.colors.accent}`;
@@ -44,14 +44,13 @@ const Content = styled.span`
   font-size: calc(3vmin + 10px);
 `;
 
-export const NumberTile = ({ value, id }) => {
+export const NumberTile = ({ value }) => {
   const [faded, setFaded] = useState(false);
 
   return (
     <StyledNumberTile
       value={value}
       faded={faded}
-      id={id}
       onClick={() => {
         if (value !== -1) setFaded(!faded);
       }}
