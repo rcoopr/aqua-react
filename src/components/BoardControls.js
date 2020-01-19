@@ -57,13 +57,13 @@ const Selector = styled.li`
 `;
 
 export const BoardControls = () => {
-  const { tool } = useSelector(state => state.controls);
+  const { fill } = useSelector(state => state.controls);
   const { board } = useSelector(state => state.board);
   const dispatch = useDispatch();
   return (
     <ToolTray>
       <Tool
-        active={tool}
+        active={fill}
         name="WATER"
         onClick={() => {
           dispatch(setTool("WATER"));
@@ -73,7 +73,7 @@ export const BoardControls = () => {
         <WaterIcon />
       </Tool>
       <Tool
-        active={tool}
+        active={fill}
         name="AIR"
         onClick={() => {
           dispatch(setTool("AIR"));
@@ -83,7 +83,7 @@ export const BoardControls = () => {
         <AirIcon />
       </Tool>
       <Tool
-        active={tool}
+        active={fill}
         name="EMPTY"
         onClick={() => {
           dispatch(setTool("EMPTY"));
