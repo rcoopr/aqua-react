@@ -5,16 +5,6 @@ import { toggleTimer } from "../redux/actions";
 import { formatTime } from "../utils/formatTime";
 import styled from "styled-components";
 
-// const clips = keyframes`
-//   0% {
-//     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-//   }
-
-//   100% {
-//     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-//   }
-// `;
-
 const Wrapper = styled.li`
   height: 32px;
   min-width: 4em;

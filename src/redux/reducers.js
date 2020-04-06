@@ -76,7 +76,6 @@ const board = (
     case "FILL_TILE":
       const newPlayingState = state.board.playing;
       newPlayingState[action.payload.index] = action.payload.fill;
-      // localStorage.setItem("boardState", JSON.stringify(newPlayingState));
 
       return {
         ...state,
@@ -91,9 +90,3 @@ const board = (
 };
 
 export const game = combineReducers({ theme, timer, controls, board });
-
-// board: {
-// playing: [fills],
-// regions: [boarddata],
-// completed: [correct fills]
-// }

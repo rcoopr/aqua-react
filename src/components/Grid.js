@@ -23,7 +23,7 @@ const GridWrapper = styled.ul`
 `;
 
 export const Grid = () => {
-  const board = useSelector(state => state.board.board); // Still stupid
+  const board = useSelector(state => state.board.board);
   const { tool, dragging } = useSelector(state => state.controls);
   const dispatch = useDispatch();
 
