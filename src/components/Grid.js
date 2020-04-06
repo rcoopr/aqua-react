@@ -19,6 +19,7 @@ const GridWrapper = styled.ul`
   border: 2px solid ${props => props.theme.colors.accent};
   border-radius: 4px;
   font-size: calc(3vmin + 10px);
+  cursor: pointer;
 `;
 
 export const Grid = () => {

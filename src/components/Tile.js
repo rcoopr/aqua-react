@@ -37,6 +37,7 @@ const StyledNumberTile = styled(Tile)`
   background: ${props =>
     props.value !== -1 && props.theme.colors.bgLightTranslucent};
   opacity: ${props => (props.faded === true ? 0.2 : 1)};
+  cursor: ${props => props.value !== -1 && "pointer"};
 `;
 
 const Content = styled.span`
