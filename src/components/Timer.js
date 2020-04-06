@@ -5,6 +5,16 @@ import { toggleTimer } from "../redux/actions";
 import { formatTime } from "../utils/formatTime";
 import styled from "styled-components";
 
+// const clips = keyframes`
+//   0% {
+//     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+//   }
+
+//   100% {
+//     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+//   }
+// `;
+
 const Wrapper = styled.li`
   height: 32px;
   min-width: 4em;
@@ -21,6 +31,7 @@ const Wrapper = styled.li`
 
   &::before {
     position: absolute;
+    display: inline-block;
     content: "";
     height: 100%;
     width: 100%;
@@ -30,8 +41,12 @@ const Wrapper = styled.li`
     will-change: clip-path;
     transition: clip-path 600ms ease-in-out,
       background 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
-
-    clip-path: ${props => (props.hide ? "inset(0)" : "inset(0 0 100% 0)")};
+    /* animation: clips 3s alternate infinite; */
+    clip-path: ${props =>
+      props.hide
+        ? "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+        : "polygon(0 0, 100% 0, 100% 0, 0 0)"};
+    /* Doesn't work on mobile - SVG dash-offset as alternative */
   }
 `;
 
