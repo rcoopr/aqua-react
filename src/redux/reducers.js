@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import { boards } from "../utils/BoardData";
+import { arraysEqual } from "../utils/arraysEqual";
 
 const defaultTheme = localStorage.getItem("theme") || "dark";
 
@@ -50,15 +51,13 @@ const board = (
     board: {
       playing: Array(boards[1].regions.length ** 2).fill("EMPTY"),
       regions: boards[1].regions,
-      completed: null
+      completed: boards[1].completed.flat()
     }
   },
   action
 ) => {
   switch (action.type) {
     case "SELECT_BOARD":
-      console.log("select board", boards[action.payload].labels);
-
       return {
         ...state,
         labels: {
@@ -70,12 +69,15 @@ const board = (
             "EMPTY"
           ),
           regions: boards[action.payload].regions,
-          completed: boards[action.payload].completed
+          completed: boards[action.payload].completed.flat()
         }
       };
     case "FILL_TILE":
       const newPlayingState = state.board.playing;
       newPlayingState[action.payload.index] = action.payload.fill;
+      if (arraysEqual(newPlayingState, state.board.completed)) {
+        console.log("yay");
+      }
 
       return {
         ...state,

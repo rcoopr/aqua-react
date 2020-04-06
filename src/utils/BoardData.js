@@ -1,4 +1,4 @@
-const { w, a } = { w: "WATER", a: "AIR" };
+const { w, a } = { w: "WATER", a: "EMPTY" };
 
 const data = {
   content: {
