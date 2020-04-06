@@ -18,8 +18,8 @@ const ToolTray = styled.ul`
 const Tool = styled.li`
   margin: 0.6em;
   border-radius: 0.5em;
-  border-top: 2px solid #00000044;
-  border-bottom: 2px solid #ffffff22;
+  border-top: 2px solid #ffffff22;
+  border-bottom: 2px solid #00000044;
   cursor: pointer;
   transition: 300ms all cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
