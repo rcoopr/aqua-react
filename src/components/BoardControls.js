@@ -1,10 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setTool, setFill, selectBoard } from "../redux/actions";
+import { setTool, setFill, setLevelSelectorOpen } from "../redux/actions";
 import styled, { css } from "styled-components";
 import { ReactComponent as AirIconSVG } from "../assets/air.svg";
 import { ReactComponent as WaterIconSVG } from "../assets/water.svg";
 import { ReactComponent as TrashIconSVG } from "../assets/trash.svg";
+import { ReactComponent as LevelSelectIconSVG } from "../assets/multi.svg";
 
 const ToolTray = styled.ul`
   display: flex;
@@ -34,6 +35,10 @@ const Tool = styled.li`
   }
 `;
 
+const LevelSelector = styled(Tool)`
+  background: none;
+`;
+
 const svg = css`
   font-size: calc(1.1vmin + 8px);
   width: 3em;
@@ -51,16 +56,13 @@ const WaterIcon = styled(WaterIconSVG)`
 const TrashIcon = styled(TrashIconSVG)`
   ${svg}
 `;
-
-const Selector = styled.li`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const LevelSelect = styled(LevelSelectIconSVG)`
+  ${svg};
+  fill: ${props => props.theme.colors.bgLight};
 `;
 
 export const BoardControls = () => {
   const { fill } = useSelector(state => state.controls);
-  const { board } = useSelector(state => state.board);
   const dispatch = useDispatch();
   return (
     <ToolTray>
@@ -94,19 +96,9 @@ export const BoardControls = () => {
       >
         <TrashIcon />
       </Tool>
-      <Selector>
-        <select
-          value={board.id}
-          onChange={e => {
-            dispatch(selectBoard(e.target.value));
-          }}
-        >
-          <option value="1">Board 1</option>
-          <option value="2">Board 2</option>
-          <option value="3">Board 3</option>
-          <option value="4">Board 4</option>
-        </select>
-      </Selector>
+      <LevelSelector onClick={() => dispatch(setLevelSelectorOpen(true))}>
+        <LevelSelect />
+      </LevelSelector>
     </ToolTray>
   );
 };

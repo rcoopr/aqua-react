@@ -1,9 +1,13 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setLevelSelectorOpen } from "../redux/actions";
 
 import { Header } from "./Header";
 import { Board } from "./Board";
+import { Modal } from "./Modal";
 import { BoardControls } from "./BoardControls";
+import { BoardSelector } from "./BoardSelector";
+import { LevelSelector } from "./LevelSelector";
 
 import styled, { ThemeProvider } from "styled-components";
 import { dark } from "../themes/dark";
@@ -34,12 +38,27 @@ const GameArea = styled.section`
 
 export const App = () => {
   const theme = useSelector(state => state.theme);
+  const boardIsCompleted = useSelector(state => state.board.boardIsCompleted);
+  const levelSelectorOpen = useSelector(
+    state => state.controls.levelSelectorOpen
+  );
+  const dispatch = useDispatch();
 
   return (
     <ThemeProvider theme={theme === "dark" ? dark : light}>
       <Container>
         <Header />
         <GameArea>
+          {boardIsCompleted && (
+            <Modal>
+              <BoardSelector />
+            </Modal>
+          )}
+          {levelSelectorOpen && (
+            <Modal onClick={() => dispatch(setLevelSelectorOpen(false))}>
+              <LevelSelector />
+            </Modal>
+          )}
           <Board />
           <BoardControls />
         </GameArea>
