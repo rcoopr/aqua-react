@@ -3,30 +3,20 @@ const { w, a } = { w: "WATER", a: "EMPTY" };
 const data = {
   content: {
     1: {
-      difficulty: "hard",
+      difficulty: "easy",
       labels: {
-        top: [6, 3, -1, 4, 3, 4, 3, 4],
-        left: [-1, 4, 4, -1, 5, -1, 4, -1]
+        top: [-1, 2, -1],
+        left: [2, -1, 1]
       },
       regions: [
-        ["a", "b", "b", "b", "b", "c", "c", "d"],
-        ["a", "e", "e", "e", "b", "d", "d", "d"],
-        ["f", "f", "f", "e", "g", "g", "g", "h"],
-        ["f", "e", "e", "e", "g", "i", "g", "h"],
-        ["j", "e", "k", "k", "g", "i", "g", "h"],
-        ["j", "e", "e", "e", "g", "i", "g", "l"],
-        ["m", "n", "n", "o", "g", "g", "g", "l"],
-        ["m", "m", "o", "o", "o", "p", "p", "p"]
+        ["a", "a", "b"],
+        ["c", "c", "d"],
+        ["e", "c", "d"]
       ],
       completed: [
-        [w, a, a, a, a, a, a, a],
-        [w, a, a, a, a, w, w, w],
-        [w, w, w, a, a, a, a, w],
-        [w, a, a, a, a, a, a, w],
-        [w, a, w, w, a, w, a, w],
-        [w, w, w, w, w, w, w, a],
-        [a, a, a, w, w, w, w, a],
-        [a, a, w, w, w, a, a, a]
+        [w, w, a],
+        [a, a, a],
+        [a, w, a]
       ]
     },
     2: {
@@ -59,6 +49,33 @@ const data = {
     },
     3: {
       difficulty: "hard",
+      labels: {
+        top: [6, 3, -1, 4, 3, 4, 3, 4],
+        left: [-1, 4, 4, -1, 5, -1, 4, -1]
+      },
+      regions: [
+        ["a", "b", "b", "b", "b", "c", "c", "d"],
+        ["a", "e", "e", "e", "b", "d", "d", "d"],
+        ["f", "f", "f", "e", "g", "g", "g", "h"],
+        ["f", "e", "e", "e", "g", "i", "g", "h"],
+        ["j", "e", "k", "k", "g", "i", "g", "h"],
+        ["j", "e", "e", "e", "g", "i", "g", "l"],
+        ["m", "n", "n", "o", "g", "g", "g", "l"],
+        ["m", "m", "o", "o", "o", "p", "p", "p"]
+      ],
+      completed: [
+        [w, a, a, a, a, a, a, a],
+        [w, a, a, a, a, w, w, w],
+        [w, w, w, a, a, a, a, w],
+        [w, a, a, a, a, a, a, w],
+        [w, a, w, w, a, w, a, w],
+        [w, w, w, w, w, w, w, a],
+        [a, a, a, w, w, w, w, a],
+        [a, a, w, w, w, a, a, a]
+      ]
+    },
+    4: {
+      difficulty: "hard",
       size: "8x8",
       labels: {
         top: [2, 4, -1, 2, 4, -1, 2, 4],
@@ -83,23 +100,6 @@ const data = {
         [a, w, w, w, a, a, a, w],
         [a, a, a, a, w, a, w, a],
         [w, w, w, a, w, a, a, a]
-      ]
-    },
-    4: {
-      difficulty: "easy",
-      labels: {
-        top: [-1, 2, -1],
-        left: [2, -1, 1]
-      },
-      regions: [
-        ["a", "a", "b"],
-        ["c", "c", "d"],
-        ["e", "c", "d"]
-      ],
-      completed: [
-        [w, w, a],
-        [a, a, a],
-        [a, w, a]
       ]
     }
   },
