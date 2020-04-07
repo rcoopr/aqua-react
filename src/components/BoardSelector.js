@@ -48,7 +48,7 @@ export const BoardSelector = () => {
         {currentBoard > 1 && (
           <PrevPuzzle
             onClick={() => {
-              dispatch(selectBoard(currentBoard - 1));
+              dispatch(selectBoard(parseInt(currentBoard) - 1));
               dispatch(setDragging(false));
             }}
           >
@@ -57,7 +57,7 @@ export const BoardSelector = () => {
         )}
         <Retry
           onClick={() => {
-            dispatch(selectBoard(currentBoard));
+            dispatch(selectBoard(parseInt(currentBoard)));
             dispatch(setDragging(false));
           }}
         >
@@ -66,7 +66,7 @@ export const BoardSelector = () => {
         {currentBoard < numberOfLevels && (
           <NextPuzzle
             onClick={() => {
-              dispatch(selectBoard(currentBoard + 1));
+              dispatch(selectBoard(parseInt(currentBoard) + 1));
               dispatch(setDragging(false));
             }}
           >
