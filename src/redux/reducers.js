@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import { boards } from "../utils/BoardData";
+import { arraysEqual } from "../utils/arraysEqual";
 
 const defaultTheme = localStorage.getItem("theme") || "dark";
 
@@ -29,7 +30,12 @@ const timer = (state = { time: 0, hidden: false }, action) => {
 };
 
 const controls = (
-  state = { tool: "WATER", fill: "WATER", dragging: false },
+  state = {
+    tool: "WATER",
+    fill: "WATER",
+    dragging: false,
+    levelSelectorOpen: false
+  },
   action
 ) => {
   switch (action.type) {
@@ -39,6 +45,8 @@ const controls = (
       return { ...state, fill: action.payload };
     case "SET_DRAGGING":
       return { ...state, dragging: action.payload };
+    case "SET_LEVEL_SELECTOR_OPEN":
+      return { ...state, levelSelectorOpen: action.payload };
     default:
       return state;
   }
@@ -46,21 +54,22 @@ const controls = (
 
 const board = (
   state = {
+    boardIsCompleted: false,
     labels: boards[1].labels,
     board: {
+      id: 1,
       playing: Array(boards[1].regions.length ** 2).fill("EMPTY"),
       regions: boards[1].regions,
-      completed: null
+      completed: boards[1].completed.flat()
     }
   },
   action
 ) => {
   switch (action.type) {
     case "SELECT_BOARD":
-      console.log("select board", boards[action.payload].labels);
-
       return {
         ...state,
+        boardIsCompleted: false,
         labels: {
           ...boards[action.payload].labels
         },
@@ -70,16 +79,17 @@ const board = (
             "EMPTY"
           ),
           regions: boards[action.payload].regions,
-          completed: boards[action.payload].completed
+          completed: boards[action.payload].completed.flat()
         }
       };
     case "FILL_TILE":
       const newPlayingState = state.board.playing;
       newPlayingState[action.payload.index] = action.payload.fill;
-      // localStorage.setItem("boardState", JSON.stringify(newPlayingState));
+      const isCompleted = arraysEqual(newPlayingState, state.board.completed);
 
       return {
         ...state,
+        boardIsCompleted: isCompleted,
         board: {
           ...state.board,
           playing: newPlayingState
@@ -91,9 +101,3 @@ const board = (
 };
 
 export const game = combineReducers({ theme, timer, controls, board });
-
-// board: {
-// playing: [fills],
-// regions: [boarddata],
-// completed: [correct fills]
-// }

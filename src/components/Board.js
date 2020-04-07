@@ -47,7 +47,7 @@ const LabelColumn = styled.ul`
 `;
 
 export const Board = () => {
-  const board = useSelector(state => state.board.board); // Stupid names
+  const board = useSelector(state => state.board.board);
   const labels = useSelector(state => state.board.labels);
 
   const size = board.regions.length;

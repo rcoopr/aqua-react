@@ -44,6 +44,13 @@ export const setDragging = boolean => {
   };
 };
 
+export const setLevelSelectorOpen = boolean => {
+  return {
+    type: "SET_LEVEL_SELECTOR_OPEN",
+    payload: boolean
+  };
+};
+
 export const selectBoard = id => {
   return {
     type: "SELECT_BOARD",
